@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<div class="body">
+		<div id = "to_add">
+
+		</div>
+
+		<div id = "spending">
+
+		</div>
+
+	</div>
+<script>
+	function build_budget_item(item){
+		let cost = document.createElement("div");
+		cost.className = "cost";
+		cost.innerHTML = item.cost;
+		let name = document.createElement("div");
+		name.className = "name";
+		name.innerHTML = item.name;
+		let container = document.createElement("div");
+		container.append(name);
+		container.append(cost);
+		return container;
+
+	}
+	
+	let budget_items = [
+		{"name":"Netflix","cost":7.0},
+
+	]
+	let to_add = document.getElementById("to_add");
+
+	for(let i=0;i<budget_items.length;i++){
+		to_add.append(build_budget_item(budget_items[i]));
+	}
+	console.log(to_add);
+</script>
+</html>
