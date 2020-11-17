@@ -12,13 +12,13 @@
 			-webkit-appearance: none;
 			margin: 0;
 		}
-		
-		
+
+
 		input[type=number]
 		{
 			-moz-appearance: textfield;
 		}
-		
+
 		#fancyInput
 		{
 			border: 0 solid;
@@ -26,11 +26,11 @@
 			border-radius:10px;
 			box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
 		}
-		
+
 		*{
 			box-sizing:border-box;
 		 }
-		 
+
 		 .column
 		 {
 			float: left;
@@ -38,7 +38,7 @@
 			padding: 10px;
 			height: 300px;
 		 }
-		 
+
 		 .row:after
 		 (
 			content: ""
@@ -60,23 +60,23 @@
 		{
 			document.body.style.backgroundColor=obj.value;
 		}
-		
+
 		function fixedColorChange(obj)
 		{
 			document.getElementById("Fixed").style.backgroundColor=obj.value;
 		}
-		
+
 		function varColorChange(obj)
 		{
 			document.getElementById("Variable").style.backgroundColor=obj.value;
 		}
-		
+
 		function incomeColorChange(obj)
 		{
 			document.getElementById("Income").style.backgroundColor=obj.value;
 		}
-		
-		
+
+
 	</script>
 </head>
 
@@ -85,9 +85,9 @@
 		Super Budget Calculator - Use scroll wheel to select inputs    *)>.<(* If you want.
 	</h1>
   </header>
-  
+
   <body>
-	
+
 	<div class="row 1">
 		<div class="column 1;">
 			<form oninput="x.value=parseInt(mCell.value)+ parseInt(mCar.value)+ parseInt(mCInsurance.value)+ parseInt(mRent.value)+ parseInt(mGarbage.value) + parseInt(mHInsurance.value)+ parseInt(mHulu.value)+ parseInt(mNetflix.value)+ parseInt(mXBXLive.value)+ parseInt(mPrime.value)+ parseInt(mDisneyPlus.value)">
@@ -97,7 +97,7 @@
 						<th>Fixed Expenses</th>
 						<th>Input</th>
 						</tr>
-						
+
 						<tr>
 							<td><label for="mCell"> Monthly Cell Bill: </label></td>
 							<td><input type="number" id ="fancyInput" name="mCell" placeholder="Click & Use Scrollwheel" min=0 max=999999999></td>
@@ -130,7 +130,7 @@
 							<td><label for="mNetflix"> Monthly Netflix: </label></td>
 							<td><input type="number" id ="fancyInput" name="mNetflix" placeholder="Click & Use Scrollwheel" min=0 max=999999999></td>
 						</tr>
-						<tr> 
+						<tr>
 							<td><label for="mXBXLive"> Monthly Xbox Live: </label></td>
 							<td><input type="number" id ="fancyInput" name="mXBXLive" placeholder="Click & Use Scrollwheel" min=0 max=999999999></td>
 						</tr>
@@ -142,12 +142,12 @@
 							<td><label for="mDisneyPlus"> Monthly Disney Plus: </label></td>
 							<td><input type="number" id ="fancyInput" name="mDisneyPlus" placeholder="Click & Use Scrollwheel" min=0 max=999999999></td>
 						</tr>
-							
+
 						<tr>
 							<td><label for="x"> Total Expenses (Fixd) = </label><br></td>
 							<td><output name="x" id="totFixed" for="mIncome mRent mElectric mWater mGarbage mInsurance mHulu mNetflix mXBXLive mPrime mDisneyPlus"></output><br></td>
 						</tr>
-						
+
 						<tr>
 							<th>Colors</th>
 							<th>Input</th>
@@ -169,14 +169,14 @@
 							<td><input type="radio" name="colors" value="blue" onclick="fixedColorChange(this)"></td>
 						</tr>
 						<tr>
-							<td><label for="green"> Green: </label></td> 
+							<td><label for="green"> Green: </label></td>
 							<td><input type="radio" name="colors" value="green" onclick="fixedColorChange(this)"></td>
-						</tr>				
+						</tr>
 					</table>
 				</fieldset>
 			</form>
 		</div>
-		
+
 		<div class="column 2;">
 			<form oninput="x.value=parseInt(mElectric.value)+ parseInt(mWater.value) + parseInt(mInternet.value) + parseInt(mhFuel.value) + parseInt(mFood.value) + parseInt(mccBills.value)+ parseInt(mlBills.value)+ parseInt(moBills.value)+ parseInt(mtBills.value)+ parseInt(mlsBills.value)+ parseInt(mcmBills.value)">
 				<fieldset>
@@ -233,7 +233,7 @@
 							<td><label for="x"> Total Expenses(Var) = </label><br></td>
 							<td><output name="x" for="mElectric mWater mInternet mhFuel mFood mccBills mlBills moBills mtBills mlsBills mcmBills"></output><br></td>
 						</tr>
-						
+
 						<tr>
 							<th>Colors</th>
 							<th>Input</th>
@@ -255,14 +255,14 @@
 							<td><input type="radio" name="colors" value="blue" onclick="varColorChange(this)"></td>
 						</tr>
 						<tr>
-							<td><label for="green"> Green: </label></td> 
+							<td><label for="green"> Green: </label></td>
 							<td><input type="radio" name="colors" value="green" onclick="varColorChange(this)"></td>
 						</tr>
 					</table>
 				</fieldset>
 			</form>
 		</div>
-		
+
 		<div class="column 3;">
 			<form oninput="x.value=parseInt(mPay.value)+ parseInt(mTutor.value) + parseInt(mDisability.value) + parseInt(mlWinnings.value) + parseInt(mInheritance.value) + parseInt(mOther.value)">
 				<fieldset>
@@ -295,12 +295,12 @@
 							<td><label for="mOther"> Monthly Other: </label></td>
 							<td><input type="number" id ="fancyInput" name="mOther" placeholder="Click & Use Scrollwheel" min=0 max=999999999></td>
 						</tr>
-							
+
 						<tr>
 							<td><label for="x"> Monthly Income = </label><br></td>
 							<td><output name="x" for="mPay mTutor mDisability mlWinnings mInheritance mOther"></output><br></td>
 						</tr>
-							
+
 						<tr>
 							<th>Colors</th>
 							<th>Selection</th>
@@ -322,7 +322,7 @@
 							<td><input type="radio" name="colors" value="blue" onclick="incomeColorChange(this)"></td>
 						</tr>
 						<tr>
-							<td><label for="green"> Green: </label></td> 
+							<td><label for="green"> Green: </label></td>
 							<td><input type="radio" name="colors" value="green" onclick="incomeColorChange(this)"></td>
 						</tr>
 					</table>
@@ -332,32 +332,32 @@
 	</div>
 
 			<form>
-					<table style="position: fixed; right: 50px; bottom: 50px; width: 50px; padding: 20px; background: white;">
+					<table style="position: fixed; right: 100px; bottom: 20px; width: 50px; padding: 20px; background: white;">
 						<tr>
 							<th>Budget</th>
 							<th>Selection</th>
 						</tr>
 						<tr>
-							<td> <label for="autoWiz">Auto Wizard</label></td> 
+							<td> <label for="autoWiz">Auto Wizard</label></td>
 							<td> <input type="radio" id="optimizer" value = "autoWiz" onclick="optimizeAuto(this)"></td><br>
 						</tr>
 						<tr>
-							<td> <label for="70/20/10">70/20/10</label></td> 
+							<td> <label for="70/20/10">70/20/10</label></td>
 							<td> <input type="radio" id="optimizer" value = "70/20/10" onclick="optimize702010(this)"></td> <br>
 						</tr>
 						<tr>
-							<td> <label for="DIY">DIY</label></td> 
+							<td> <label for="DIY">DIY</label></td>
 							<td> <input type="radio" id="optimizer" value = "DIY" onclick="optimizeDIY(this)"></td> <br>
 						</tr>
 						<tr>
-							<td> <label for="other">Other</label></td> 
+							<td> <label for="other">Other</label></td>
 							<td> <input type="radio" id="optimizer" value = "other" onclick="optimizeOther(this)"></td> <br>
 						</tr>
 					</table>
 			</form>
 
   </body>
-  
+
   <footer>
 	 <form>
 		<table>
@@ -382,7 +382,7 @@
 				<td><input type="radio" name="colors" value="blue" onclick="colorChange(this)"></td>
 			</tr>
 			<tr>
-				<td><label for="green"> Green: </label></td> 
+				<td><label for="green"> Green: </label></td>
 				<td><input type="radio" name="colors" value="green" onclick="colorChange(this)"></td>
 			</tr>
 		</table>
