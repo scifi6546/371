@@ -332,29 +332,65 @@
 	</div>
 
 			<form>
-					<table style="position: fixed; right: 60px; bottom: 20px; width: 50px; padding: 20px; background: white;">
+<<<<<<< HEAD
+
+=======
+					<table style="position: fixed; right: 200px; bottom: 0px; width: 50px; padding: 20px; background: white;">
+>>>>>>> f73b4ecc9db49626cae89e071d75f50a2f897aa5
 						<tr>
-							<th>Budget</th>
-							<th>Selection</th>
+	 					 	<th>Background Color</th>
+	 					 	<th></th>
+							<th>Budget Selection</th>
+							<th></th>
 						</tr>
 						<tr>
+							<td><label for="gray"> Gray: </label></td>
+ 					 		<td><input type="radio" name="colors" value="gray" onclick="colorChange(this)"></td>
 							<td> <label for="autoWiz">Auto Wizard</label></td>
 							<td> <input type="radio" id="optimizer" value = "autoWiz" onclick="optimizeAuto(this)"></td><br>
 						</tr>
 						<tr>
+							<td><label for="lime"> Lime: </label></td>
+	 					 	<td><input type="radio" name="colors" value="lime" onclick="colorChange(this)"></td>
 							<td> <label for="70/20/10">70/20/10</label></td>
 							<td> <input type="radio" id="optimizer" value = "70/20/10" onclick="optimize702010(this)"></td> <br>
 						</tr>
 						<tr>
+							<td><label for="red"> Red: </label></td>
+	 					 	<td><input type="radio" name="colors" value="red" 		onclick="colorChange(this)"></td>
 							<td> <label for="DIY">DIY</label></td>
 							<td> <input type="radio" id="optimizer" value = "DIY" onclick="optimizeDIY(this)"></td> <br>
 						</tr>
 						<tr>
-							<td> <label for="other">Other</label></td>
+							<td><label for="blue"> Blue: </label></td>
+	 					 	<td><input type="radio" name="colors" value="blue" onclick="colorChange(this)"></td>
+						 	<td> <label for="other">Other</label></td>
 							<td> <input type="radio" id="optimizer" value = "other" onclick="optimizeOther(this)"></td> <br>
 						</tr>
+						<tr>
+	 					 	<td><label for="green"> Green: </label></td>
+	 					 	<td><input type="radio" name="colors" value="green" onclick="colorChange(this)"></td>
+	 				 </tr>
 					</table>
 			</form>
+			<!-- <form>
+			 <table style="position: fixed; right: 270px; bottom: 20px; width: 50px; padding: 20px; background: white;">
+				 <tr>
+				 </tr>
+				 <tr>
+				 </tr>
+				 <tr>
+
+				 </tr>
+				 <tr>
+
+				 </tr>
+				 <tr>
+
+				 </tr>
+
+			 </table>
+		 </form>-->
 
 			<form>
 				<table style="position: fixed; right: 140px; bottom: 20px; width: 50px; padding: 20px; background: white;">
@@ -387,6 +423,6 @@
   </body>
 
   <footer>
-	 
+
   </footer>
 </html>
