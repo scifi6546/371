@@ -32,7 +32,7 @@
 		Super Budget Calculator
 	</h1>
 	
-		Fill out the table with values to fit your situation
+		fill out the table with values to fit your situation
 
   </header>
 </head>
@@ -40,7 +40,6 @@
 	<div class="row 1">
 		<div class="column 1;">
 			<form oninput="x.value=parseInt(mCell.value)+ parseInt(mCar.value)+ parseInt(mCInsurance.value)+ parseInt(mRent.value)+ parseInt(mGarbage.value) + parseInt(mHInsurance.value)+ parseInt(mHulu.value)+ parseInt(mNetflix.value)+ parseInt(mXBXLive.value)+ parseInt(mPrime.value)+ parseInt(mDisneyPlus.value);">
-				<fieldset>
 					<table id = "Fixed" style="float: left; padding: 20px; background: white;">
 						<tr>
 							<th> Monthly </th>
@@ -126,14 +125,12 @@
 								<td align="center"><input type="radio" name="colors" value="green" onclick="fixedColorChange(this)"></td>
 							</tr>
 						</table>
-					</table>
-				</fieldset>
+					</table>	
 			</form>
 		</div>
 
 		<div class="column 2;">
 			<form oninput="y.value=parseInt(mElectric.value)+ parseInt(mWater.value) + parseInt(mInternet.value) + parseInt(mhFuel.value) + parseInt(mFood.value) + parseInt(mccBills.value)+ parseInt(mlBills.value)+ parseInt(moBills.value)+ parseInt(mtBills.value)+ parseInt(mlsBills.value)+ parseInt(mcmBills.value)">
-				<fieldset>
 					<table id = "Variable" style="float: left; padding: 20px; background: white;">
 						<tr>
 							<th> Monthly </th>
@@ -219,13 +216,11 @@
 							</tr>
 						</table>
 					</table>
-				</fieldset>
 			</form>
 		</div>
 
 		<div class="column 3;">
 			<form oninput="x.value=parseInt(mPay.value)+ parseInt(mTutor.value) + parseInt(mDisability.value) + parseInt(mlWinnings.value) + parseInt(mInheritance.value) + parseInt(mOther.value)">
-				<fieldset>
 					<table id = "Income" style="float: left; top: 0; padding: 20px; background: white;">
 						<tr>
 							<th> Monthly </th>
@@ -295,56 +290,59 @@
 						
 						</table>
 					</table>
-				</fieldset>
 			</form>
 		</div>
 	</div>
 
 			<form>
-					<table style="position: fixed; right: 100px; bottom: 0px; width: 50px; padding:0 5px 0 0;; background: white;">
-
+					<table style="position: fixed; right: 30px; bottom: 80px; width: 50px; padding:0 5px 0 0;; background: white;">
 						<tr>
-							<th>Budget Selection</th>
 							<th></th>
-	 					 	<th>Background Color</th>	 	
+							<th>Budget</th>	 
+							<th>Selection</th>	 
+							<th></th>	 							
 						</tr>
- 					 	<tr>
- 						 	<td></td>
- 						 	<td></td>
- 						 	<td><label for="white"> White: </label></td>
- 						 	<td><input type="radio" name="colors" value="white" onclick="colorChange(this)"></td>
- 					 	</tr>
 						<tr>
 							<td> <label for="autoWiz">Auto Wizard</label></td>
 							<td> <input type="radio" id="optimizer" value = "autoWiz" onclick="optimizeAuto(this)"></td>
-							<td><label for="gray"> Gray: </label></td>
- 					 		<td><input type="radio" name="colors" value="gray" onclick="colorChange(this)"></td>
-						</tr>
-						<tr>
 							<td> <label for="70/20/10">70/20/10</label></td>
 							<td> <input type="radio" id="optimizer" value = "70/20/10" onclick="optimize702010(this)"></td>
-							<td><label for="lime"> Lime: </label></td>
-	 					 	<td><input type="radio" name="colors" value="lime" onclick="colorChange(this)"></td>
-							</tr>
+						</tr>
 						<tr>
 							<td> <label for="DIY">DIY</label></td>
 							<td> <input type="radio" id="optimizer" value = "DIY" onclick="optimizeDIY(this)"></td>
-							<td><label for="red"> Red: </label></td>
-	 					 	<td><input type="radio" name="colors" value="red" 		onclick="colorChange(this)"></td>
-						</tr>
-						<tr>
 						 	<td> <label for="other">Other</label></td>
 							<td> <input type="radio" id="optimizer" value = "other" onclick="optimizeOther(this)"></td>
-							<td><label for="blue"> Blue: </label></td>
-							<td><input type="radio" name="colors" value="blue" onclick="colorChange(this)"></td>
 						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-	 					 	<td><label for="green"> Green: </label></td>
-	 					 	<td><input type="radio" name="colors" value="green" onclick="colorChange(this)"></td>
-	 				 </tr>
 					</table>
+			</form>
+			<form>
+				<table style="position: fixed; right: 10px; bottom: 0px; width: auto; padding:0 5px 0 0; font-size:12px; background-color:Orange">
+							<tr>
+								<th>Page</th>
+								<th> - </th>
+								<th>Color</th>
+								<th> - </th>
+								<th>Select</th>
+								<th></th>
+							</tr>
+							<tr>
+								<td align="center"><label for="white"> White: </label></td>
+								<td align="center"><input type="radio" name="colors" value="white" onclick="colorChange(this)"></td>
+								<td align="center"><label for="gray"> Gray: </label></td>
+								<td align="center"><input type="radio" name="colors" value="gray" onclick="colorChange(this)"></td>
+								<td align="center"><label for="lime"> Lime: </label></td>
+								<td align="center"><input type="radio" name="colors" value="lime" onclick="colorChange(this)"></td>
+							</tr>
+							<tr>	
+								<td align="center"><label for="red"> Red: </label></td>
+								<td align="center"><input type="radio" name="colors" value="red" onclick="colorChange(this)"></td>
+								<td align="center"><label for="blue"> Blue: </label></td>
+								<td align="center"><input type="radio" name="colors" value="blue" onclick="colorChange(this)"></td>
+								<td align="center"><label for="green"> Green: </label></td>
+								<td align="center"><input type="radio" name="colors" value="green" onclick="colorChange(this)"></td>
+							</tr>
+						</table>
 			</form>
 			<footer position: fixed; bottom: 10px;>
 				<h2>
