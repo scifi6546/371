@@ -1,3 +1,9 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+	{
+		-webkit-appearance: none;
+		margin: 0;
+	}
 body
 {
 	div {display: inline-block}
@@ -30,6 +36,46 @@ footer
 	width: 100%;
 	height: 2.5rem;
 }
+input[type=number]
+{
+	-moz-appearance: textfield;
+}
+
+#fancyInput
+{
+	border: 0 solid;
+	padding: 10px;
+	border-radius:10px;
+	box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+*{
+	box-sizing:border-box;
+ }
+
+ .column
+ {
+	float: left;
+	width: 33.33%;
+	padding: 10px;
+	height: 300px;
+ }
+
+ .row:after
+ (
+	content: ""
+	display: table;
+	clear: both;
+ }
+ .row
+ {
+	float: left;
+	width: 33.33%;
+	height: auto;
+	position: relative;
+	padding: 10px;
+	height: 300px;
+ }
 
 
 /*
