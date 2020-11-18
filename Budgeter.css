@@ -4,13 +4,7 @@ input::-webkit-inner-spin-button
 		-webkit-appearance: none;
 		margin: 0;
 	}
-body
-{
-	div {display: inline-block}
-	.onLeft {width: 30%}
-	.onCenter {width: 40%}
-	.onRight {width: 30%}
-}
+
 header
 {
 
@@ -27,6 +21,10 @@ body
 	padding-top: 120px;
 	height: 100%;
 	width:100%;
+	div {display: inline-block}
+	.onLeft {width: 30%}
+	.onCenter {width: 40%}
+	.onRight {width: 30%}
 }
 
 footer
