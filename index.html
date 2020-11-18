@@ -6,8 +6,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initia;-scale=1">
 	<style>
-		input::-webkit-outer-spin-button,
-		input::-webkit-inner-spin-button
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button
 		{
 			-webkit-appearance: none;
 			margin: 0;
@@ -84,6 +84,9 @@
 	<h1>
 		Super Budget Calculator
 	</h1>
+	<h2>
+		Fill out the table with values to fit your situation
+	</h2>
   </header>
 
   <body>
@@ -151,6 +154,10 @@
 						<tr>
 							<th>Colors</th>
 							<th>Input</th>
+						</tr>
+						<tr>
+							<td><label for="white"> White: </label></td>
+							<td><input type="radio" name="colors" value="white" onclick="fixedColorChange(this)"></td>
 						</tr>
 						<tr>
 							<td><label for="gray"> Gray: </label></td>
@@ -239,6 +246,10 @@
 							<th>Input</th>
 						</tr>
 						<tr>
+							<td><label for="white"> White: </label></td>
+							<td><input type="radio" name="colors" value="white" onclick="varColorChange(this)"></td>
+						</tr>
+						<tr>
 							<td><label for="gray"> Gray: </label></td>
 							<td><input type="radio" name="colors" value="gray" onclick="varColorChange(this)"></td>
 						</tr>
@@ -306,6 +317,10 @@
 							<th>Selection</th>
 						</tr>
 						<tr>
+							<td><label for="white"> White: </label></td>
+							<td><input type="radio" name="colors" value="white" onclick="incomeColorChange(this)"></td>
+						</tr>
+						<tr>
 							<td><label for="gray"> Gray: </label></td>
 							<td><input type="radio" name="colors" value="gray" onclick="incomeColorChange(this)"></td>
 						</tr>
@@ -340,6 +355,12 @@
 	 					 	<th>Background Color</th>
 	 					 	<th></th>
 						</tr>
+ 					 	<tr>
+ 						 	<td></td>
+ 						 	<td></td>
+ 						 	<td><label for="white"> White: </label></td>
+ 						 	<td><input type="radio" name="colors" value="white" onclick="colorChange(this)"></td>
+ 					 	</tr>
 						<tr>
 							<td> <label for="autoWiz">Auto Wizard</label></td>
 							<td> <input type="radio" id="optimizer" value = "autoWiz" onclick="optimizeAuto(this)"></td><br>
