@@ -40,64 +40,67 @@
   <body>
 	<div class="row 1">
 		<div class="column 1;">
-			<form oninput="x.value=parseInt(mCell.value)+ parseInt(mCar.value)+ parseInt(mCInsurance.value)+ parseInt(mRent.value)+ parseInt(mGarbage.value) + parseInt(mHInsurance.value)+ parseInt(mHulu.value)+ parseInt(mNetflix.value)+ parseInt(mXBXLive.value)+ parseInt(mPrime.value)+ parseInt(mDisneyPlus.value)">
+			<form oninput="x.value=parseInt(mCell.value)+ parseInt(mCar.value)+ parseInt(mCInsurance.value)+ parseInt(mRent.value)+ parseInt(mGarbage.value) + parseInt(mHInsurance.value)+ parseInt(mHulu.value)+ parseInt(mNetflix.value)+ parseInt(mXBXLive.value)+ parseInt(mPrime.value)+ parseInt(mDisneyPlus.value); y.value=parseInt(mElectric.value)+ parseInt(mWater.value) + parseInt(mInternet.value) + parseInt(mhFuel.value) + parseInt(mFood.value) + parseInt(mccBills.value)+ parseInt(mlBills.value)+ parseInt(moBills.value)+ parseInt(mtBills.value)+ parseInt(mlsBills.value)+ parseInt(mcmBills.value)">
 				<fieldset>
 					<table id = "Fixed" style="float: left; padding: 20px; background: white;">
 						<tr>
-						<th>Fixed Expenses</th>
-						<th>Input</th>
+							<h1> Monthly </h1>
+						</tr>
+						<tr>
+							<th>Fixed Expenses</th>
+							<th>Input</th>
 						</tr>
 
 						<tr>
-							<td><label for="mCell"> Monthly Cell Bill: </label></td>
+							<td><label for="mCell"> Cell Bill: </label></td>
 							<td><input type="number" id ="fancyInput" name="mCell" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mCar"> Monthly Car Bill: </label></td>
+							<td><label for="mCar"> Car Bill: </label></td>
 							<td><input type="number" id ="fancyInput" name="mCar" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mCInsurance"> Monthly Car Insurance: </label></td>
+							<td><label for="mCInsurance"> Car Insurance: </label></td>
 							<td><input type="number" id ="fancyInput" name="mCInsurance" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mRent"> Monthly Mortgage/Rent: </label></td>
+							<td><label for="mRent"> Mortgage/Rent: </label></td>
 							<td><input type="number" id ="fancyInput" name="mRent" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mGarbage"> Monthly Garbage: </label></td>
+							<td><label for="mGarbage"> Garbage: </label></td>
 							<td><input type="number" id ="fancyInput" name="mGarbage" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mHInsurance"> Monthly Health Insurance: </label></td>
+							<td><label for="mHInsurance"> Health Insurance: </label></td>
 							<td><input type="number" id ="fancyInput" name="mHInsurance" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mHulu"> Monthly Hulu: </label></td>
+							<td><label for="mHulu"> Hulu: </label></td>
 							<td><input type="number" id ="fancyInput" name="mHulu" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mNetflix"> Monthly Netflix: </label></td>
+							<td><label for="mNetflix"> Netflix: </label></td>
 							<td><input type="number" id ="fancyInput" name="mNetflix" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mXBXLive"> Monthly Xbox Live: </label></td>
+							<td><label for="mXBXLive"> Xbox Live: </label></td>
 							<td><input type="number" id ="fancyInput" name="mXBXLive" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mPrime"> Monthly Amazon Prime: </label></td>
+							<td><label for="mPrime"> Amazon Prime: </label></td>
 							<td><input type="number" id ="fancyInput" name="mPrime" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mDisneyPlus"> Monthly Disney Plus: </label></td>
+							<td><label for="mDisneyPlus"> Disney Plus: </label></td>
 							<td><input type="number" id ="fancyInput" name="mDisneyPlus" value=0 min=0 max=999999999></td>
 						</tr>
-
+							<td><br></td>
 						<tr>
 							<td><label for="x"> Total Expenses (Fixed) = </label></td>
-							<td><output name="x" id="totFixed"></output><br></td>
+							<td><output name="x" id="totFixed"></output></td>
 						</tr>
-
+						<td><br></td>
 						<tr>
 							<th>Colors</th>
 							<th>Input</th>
@@ -126,68 +129,62 @@
 							<td><label for="green"> Green: </label></td>
 							<td><input type="radio" name="colors" value="green" onclick="fixedColorChange(this)"></td>
 						</tr>
-					</table>
-				</fieldset>
-			</form>
-		</div>
-
-		<div class="column 2;">
-			<form oninput="x.value=parseInt(mElectric.value)+ parseInt(mWater.value) + parseInt(mInternet.value) + parseInt(mhFuel.value) + parseInt(mFood.value) + parseInt(mccBills.value)+ parseInt(mlBills.value)+ parseInt(moBills.value)+ parseInt(mtBills.value)+ parseInt(mlsBills.value)+ parseInt(mcmBills.value)">
-				<fieldset>
-					<table id = "Variable" style="float: left; padding: 20px; background: white;">
+						
+						<table id = "Variable" style="float: left; padding: 20px; background: white;">
 						<tr>
 							<th>Variable Expenses</th>
 							<th>Input</th>
 						</tr>
 						<tr>
-							<td><label for="mElectric"> Monthly Electric: </label></td>
+							<td><label for="mElectric"> Electric: </label></td>
 							<td><input type="number" id ="fancyInput" name="mElectric" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mWater"> Monthly Water: </label></td>
+							<td><label for="mWater"> Water: </label></td>
 							<td><input type="number" id ="fancyInput" name="mWater" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mInternet"> Monthly Internet: </label></td>
+							<td><label for="mInternet"> Internet: </label></td>
 							<td><input type="number" id ="fancyInput" name="mInternet" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mhFuel"> Monthly House Fuel: </label></td>
+							<td><label for="mhFuel"> House Fuel: </label></td>
 							<td><input type="number" id ="fancyInput" name="mhFuel" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mFood"> Monthly Food: </label></td>
+							<td><label for="mFood"> Food: </label></td>
 							<td><input type="number" id ="fancyInput" name="mFood" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mccBills"> Monthly CC Bills: </label></td>
+							<td><label for="mccBills"> CC Bills: </label></td>
 							<td><input type="number" id ="fancyInput" name="mccBills" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mlBills"> Monthly Loan Bills: </label></td>
+							<td><label for="mlBills"> Loan Bills: </label></td>
 							<td><input type="number" id ="fancyInput" name="mlBills" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="moBills"> Monthly Other Bills: </label></td>
+							<td><label for="moBills"> Other Bills: </label></td>
 							<td><input type="number" id ="fancyInput" name="moBills" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mtBills"> Monthly Tax Bills: </label></td>
+							<td><label for="mtBills"> Tax Bills: </label></td>
 							<td><input type="number" id ="fancyInput" name="mtBills" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mlsBills"> Monthly Loan Shark Bills: </label></td>
+							<td><label for="mlsBills"> Loan Shark Bills: </label></td>
 							<td><input type="number" id ="fancyInput" name="mlsBills" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mcmBills"> Monthly Club Membership Bills: </label></td>
+							<td><label for="mcmBills"> Club Membership Bills: </label></td>
 							<td><input type="number" id ="fancyInput" name="mcmBills" value=0 min=0 max=999999999></td>
 						</tr>
+						<td><br></td>
 						<tr>
-							<td><label for="x"> Total Expenses(Var) = </label><br></td>
-							<td><output name="x" for="mElectric mWater mInternet mhFuel mFood mccBills mlBills moBills mtBills mlsBills mcmBills"></output><br></td>
+							<td><label for="y"> Total Expenses(Var) = </label><br></td>
+							<td><output name="y" for="mElectric mWater mInternet mhFuel mFood mccBills mlBills moBills mtBills mlsBills mcmBills"></output></td>
 						</tr>
-
+						<td><br></td>
 						<tr>
 							<th>Colors</th>
 							<th>Input</th>
@@ -217,48 +214,108 @@
 							<td><input type="radio" name="colors" value="green" onclick="varColorChange(this)"></td>
 						</tr>
 					</table>
+					</table>
 				</fieldset>
 			</form>
 		</div>
 
-		<div class="column 3;">
-			<form oninput="x.value=parseInt(mPay.value)+ parseInt(mTutor.value) + parseInt(mDisability.value) + parseInt(mlWinnings.value) + parseInt(mInheritance.value) + parseInt(mOther.value)">
+		<div class="column 2;">
+			<form oninput="y.value=parseInt(mPay.value)+ parseInt(mTutor.value) + parseInt(mDisability.value) + parseInt(mlWinnings.value) + parseInt(mInheritance.value) + parseInt(mOther.value)">
 				<fieldset>
 					<table id = "Income" style="float: left; top: 0; padding: 20px; background: white;">
+						<tr>
+						<h1> Monthly </h1>
+						</tr>
 						<tr>
 							<th>Income</th>
 							<th>Input</th>
 						</tr>
 						<tr>
-							<td><label for="mPay"> Monthly Pay: </label></td>
+							<td><label for="mPay"> Job Pay: </label></td>
 							<td><input type="number" id ="fancyInput" name="mPay" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mTutor"> Monthly Tutoring Pay: </label></td>
+							<td><label for="mTutor"> Tutoring Pay: </label></td>
 							<td><input type="number" id ="fancyInput" name="mTutor" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mDisability"> Monthly Disability Pay: </label></td>
+							<td><label for="mDisability"> Disability Pay: </label></td>
 							<td><input type="number" id ="fancyInput" name="mDisability" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mlWinnings"> Monthly Lottery Winnings: </label></td>
+							<td><label for="mlWinnings"> Lottery Winnings: </label></td>
 							<td><input type="number" id ="fancyInput" name="mlWinnings" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mInheritance"> Monthly Inheritance Pay: </label></td>
+							<td><label for="mInheritance"> Inheritance Pay: </label></td>
 							<td><input type="number" id ="fancyInput" name="mInheritance" value=0 min=0 max=999999999></td>
 						</tr>
 						<tr>
-							<td><label for="mOther"> Monthly Other: </label></td>
+							<td><label for="mOther"> Other: </label></td>
 							<td><input type="number" id ="fancyInput" name="mOther" value=0 min=0 max=999999999></td>
 						</tr>
-
+							<td><br></td>
 						<tr>
-							<td><label for="x"> Monthly Income = </label><br></td>
+							<td><label for="x"> Total Income = </label><br></td>
 							<td><output name="x" for="mPay mTutor mDisability mlWinnings mInheritance mOther"></output><br></td>
 						</tr>
+							<td><br></td>
+						<tr>
+							<th>Colors</th>
+							<th>Selection</th>
+						</tr>
+						<tr>
+							<td><label for="white"> White: </label></td>
+							<td><input type="radio" name="colors" value="white" onclick="incomeColorChange(this)"></td>
+						</tr>
+						<tr>
+							<td><label for="gray"> Gray: </label></td>
+							<td><input type="radio" name="colors" value="gray" onclick="incomeColorChange(this)"></td>
+						</tr>
+						<tr>
+							<td><label for="lime"> Lime: </label></td>
+							<td><input type="radio" name="colors" value="lime" onclick="incomeColorChange(this)"></td>
+						</tr>
+						<tr>
+							<td><label for="red"> Red: </label></td>
+							<td><input type="radio" name="colors" value="red" onclick="incomeColorChange(this)"></td>
+						</tr>
+						<tr>
+							<td><label for="blue"> Blue: </label></td>
+							<td><input type="radio" name="colors" value="blue" onclick="incomeColorChange(this)"></td>
+						</tr>
+						<tr>
+							<td><label for="green"> Green: </label></td>
+							<td><input type="radio" name="colors" value="green" onclick="incomeColorChange(this)"></td>
+						</tr>
+					</table>
+				</fieldset>
+			</form>
+		</div>
 
+		<div class="column 3;">
+			<form oninput="x.value=parseInt(mBlah.value)">
+				<fieldset>
+					<table id = "Budget" style="float: left; top: 0; padding: 20px; background: white;">
+						<tr>
+						<h1> Monthly </h1>
+						</tr>
+						<tr>
+							<th>Where to Budget</th>
+							<th>How much to Budget</th>
+						</tr>
+						<tr>
+							<td><label for="mBlah"> Blah: </label></td>
+							<td><input type="number" id ="fancyInput" name="mBlah" value=0 min=0 max=999999999></td>
+						</tr>
+						<tr>
+							<td><label for="mOther"> Other: </label></td>
+							<td><input type="number" id ="fancyInput" name="mOther" value=0 min=0 max=999999999></td>
+						</tr>
+						<tr>
+							<td><label for="x"> Total = </label><br></td>
+							<td><output name="x" for="mBlah"></output><br></td>
+						</tr>
 						<tr>
 							<th>Colors</th>
 							<th>Selection</th>
