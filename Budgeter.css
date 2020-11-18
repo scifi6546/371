@@ -12,6 +12,7 @@ header
 	top: 0;
 	background-color:orange;
     height: 120px;
+    height: 80px;
 	width:100%;
 
 }
@@ -19,6 +20,7 @@ header
 body
 {
 	padding-top: 120px;
+	padding-top: 80px;
 	height: 100%;
 	width:100%;
 	div {display: inline-block}
@@ -58,6 +60,7 @@ input[type=number]
 	width: 33.33%;
 	padding: 10px;
 	height: 300px;
+	height: auto;
  }
 
  .row:after
