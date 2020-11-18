@@ -394,12 +394,14 @@
 
 			<form>
 					<table style="position: fixed; right: 180px; bottom: 0px; width: 50px; padding: 20px; background: white;">
+					<table style="position: fixed; right: 100px; bottom: 0px; width: 50px; padding:0 5px 0 0;; background: white;">
 
 						<tr>
 							<th>Budget Selection</th>
 							<th></th>
 	 					 	<th>Background Color</th>
 	 					 	<th></th>
+	 					 	<th>Background Color</th>	 	
 						</tr>
  					 	<tr>
  						 	<td></td>
@@ -410,12 +412,14 @@
 						<tr>
 							<td> <label for="autoWiz">Auto Wizard</label></td>
 							<td> <input type="radio" id="optimizer" value = "autoWiz" onclick="optimizeAuto(this)"></td><br>
+							<td> <input type="radio" id="optimizer" value = "autoWiz" onclick="optimizeAuto(this)"></td>
 							<td><label for="gray"> Gray: </label></td>
  					 		<td><input type="radio" name="colors" value="gray" onclick="colorChange(this)"></td>
 						</tr>
 						<tr>
 							<td> <label for="70/20/10">70/20/10</label></td>
 							<td> <input type="radio" id="optimizer" value = "70/20/10" onclick="optimize702010(this)"></td> <br>
+							<td> <input type="radio" id="optimizer" value = "70/20/10" onclick="optimize702010(this)"></td>
 							<td><label for="lime"> Lime: </label></td>
 	 					 	<td><input type="radio" name="colors" value="lime" onclick="colorChange(this)"></td>
 							</tr>
