@@ -39,93 +39,106 @@
   <body>
 	<div class="row 1">
 		<div class="column 1;">
-			<form oninput="x.value=parseInt(mCell.value)+ parseInt(mCar.value)+ parseInt(mCInsurance.value)+ parseInt(mRent.value)+ parseInt(mGarbage.value) + parseInt(mHInsurance.value)+ parseInt(mHulu.value)+ parseInt(mNetflix.value)+ parseInt(mXBXLive.value)+ parseInt(mPrime.value)+ parseInt(mDisneyPlus.value);">
+			<form id = "top" oninput="x.value=parseInt(mCell.value)+ parseInt(mCar.value)+ parseInt(mCInsurance.value)+ parseInt(mRent.value)+ parseInt(mGarbage.value) + parseInt(mHInsurance.value)+ parseInt(mHulu.value)+ parseInt(mNetflix.value)+ parseInt(mXBXLive.value)+ parseInt(mPrime.value)+ parseInt(mDisneyPlus.value);">
 					<table id = "Fixed" style="float: left; padding: 20px; background: white;">
 						<tr>
 							<th> Monthly </th>
 						</tr>
 						<tr>
-							<th>Fixed Expenses</th>
+							<th>Fixed Costs</th>
 							<th>Input</th>
+							<th>Budget</th>
 						</tr>
 
 						<tr>
 							<td><label for="mCell"> Cell Bill: </label></td>
 							<td><input type="number" id ="fancyInput" name="mCell" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mCar"> Car Bill: </label></td>
 							<td><input type="number" id ="fancyInput" name="mCar" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mCInsurance"> Car Insurance: </label></td>
 							<td><input type="number" id ="fancyInput" name="mCInsurance" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mRent"> Mortgage/Rent: </label></td>
 							<td><input type="number" id ="fancyInput" name="mRent" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mGarbage"> Garbage: </label></td>
 							<td><input type="number" id ="fancyInput" name="mGarbage" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mHInsurance"> Health Insurance: </label></td>
 							<td><input type="number" id ="fancyInput" name="mHInsurance" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mHulu"> Hulu: </label></td>
 							<td><input type="number" id ="fancyInput" name="mHulu" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mNetflix"> Netflix: </label></td>
 							<td><input type="number" id ="fancyInput" name="mNetflix" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mXBXLive"> Xbox Live: </label></td>
 							<td><input type="number" id ="fancyInput" name="mXBXLive" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mPrime"> Amazon Prime: </label></td>
 							<td><input type="number" id ="fancyInput" name="mPrime" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mDisneyPlus"> Disney Plus: </label></td>
 							<td><input type="number" id ="fancyInput" name="mDisneyPlus" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 							<td><br></td>
 						<tr>
 							<td><label for="x"> Total Expenses (Fixed) = </label></td>
 							<td><output name="x" id="totFixed"></output></td>
 						</tr>
-					
-						<table style="font-size:12px; background-color:Orange">
-							<tr>
-								<th>Form</th>
-								<th> - </th>
-								<th>Color</th>
-								<th> - </th>
-								<th>Select</th>
-								<th></th>
-							</tr>
-							<tr>
-								<td align="center"><label for="white"> White: </label></td>
-								<td align="center"><input type="radio" name="colors" value="white" onclick="fixedColorChange(this)"></td>
-								<td align="center"><label for="gray"> Gray: </label></td>
-								<td align="center"><input type="radio" name="colors" value="gray" onclick="fixedColorChange(this)"></td>
-								<td align="center"><label for="lime"> Lime: </label></td>
-								<td align="center"><input type="radio" name="colors" value="lime" onclick="fixedColorChange(this)"></td>
-							</tr>
-							<tr>	
-								<td align="center"><label for="red"> Red: </label></td>
-								<td align="center"><input type="radio" name="colors" value="red" onclick="fixedColorChange(this)"></td>
-								<td align="center"><label for="blue"> Blue: </label></td>
-								<td align="center"><input type="radio" name="colors" value="blue" onclick="fixedColorChange(this)"></td>
-								<td align="center"><label for="green"> Green: </label></td>
-								<td align="center"><input type="radio" name="colors" value="green" onclick="fixedColorChange(this)"></td>
-							</tr>
-						</table>
 					</table>
+			</form>
+			<form>
+				<table style="position: fixed; bottom: 30px; font-size:12px; background-color:Orange">
+					<tr>
+						<th>Form</th>
+						<th> - </th>
+						<th>Color</th>
+						<th> - </th>
+						<th>Select</th>
+						<th></th>
+					</tr>
+					<tr>
+						<td align="center"><label for="white"> White: </label></td>
+						<td align="center"><input type="radio" name="colors" value="white" onclick="fixedColorChange(this)"></td>
+						<td align="center"><label for="gray"> Gray: </label></td>
+						<td align="center"><input type="radio" name="colors" value="gray" onclick="fixedColorChange(this)"></td>
+						<td align="center"><label for="lime"> Lime: </label></td>
+						<td align="center"><input type="radio" name="colors" value="lime" onclick="fixedColorChange(this)"></td>
+					</tr>
+					<tr>	
+						<td align="center"><label for="red"> Red: </label></td>
+						<td align="center"><input type="radio" name="colors" value="red" onclick="fixedColorChange(this)"></td>
+						<td align="center"><label for="blue"> Blue: </label></td>
+						<td align="center"><input type="radio" name="colors" value="blue" onclick="fixedColorChange(this)"></td>
+						<td align="center"><label for="green"> Green: </label></td>
+						<td align="center"><input type="radio" name="colors" value="green" onclick="fixedColorChange(this)"></td>
+					</tr>
+				</table>
 			</form>
 		</div>
 
@@ -136,52 +149,64 @@
 							<th> Monthly </th>
 						</tr>
 						<tr>
-							<th>Variable Expenses</th>
+							<th>Variable Costs</th>
 							<th>Input</th>
+							<th>Budget</th>
 						</tr>
 						<tr>
 							<td><label for="mElectric"> Electric: </label></td>
 							<td><input type="number" id ="fancyInput" name="mElectric" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mWater"> Water: </label></td>
 							<td><input type="number" id ="fancyInput" name="mWater" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mInternet"> Internet: </label></td>
 							<td><input type="number" id ="fancyInput" name="mInternet" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mhFuel"> House Fuel: </label></td>
 							<td><input type="number" id ="fancyInput" name="mhFuel" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mFood"> Food: </label></td>
 							<td><input type="number" id ="fancyInput" name="mFood" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mccBills"> CC Bills: </label></td>
 							<td><input type="number" id ="fancyInput" name="mccBills" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mlBills"> Loan Bills: </label></td>
 							<td><input type="number" id ="fancyInput" name="mlBills" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="moBills"> Other Bills: </label></td>
 							<td><input type="number" id ="fancyInput" name="moBills" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mtBills"> Tax Bills: </label></td>
 							<td><input type="number" id ="fancyInput" name="mtBills" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mlsBills"> Loan Shark Bills: </label></td>
 							<td><input type="number" id ="fancyInput" name="mlsBills" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<tr>
 							<td><label for="mcmBills"> Club Membership Bills: </label></td>
 							<td><input type="number" id ="fancyInput" name="mcmBills" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+							<td>My Budget Options</td>
 						</tr>
 						<td><br></td>
 						<tr>
@@ -189,7 +214,7 @@
 							<td><output name="y" for="mElectric mWater mInternet mhFuel mFood mccBills mlBills moBills mtBills mlsBills mcmBills"></output></td>
 						</tr>
 						
-						<table style="font-size:12px; background-color:Orange">
+						<table style="position: fixed; bottom: 30px; font-size:12px; background-color:Orange">
 							<tr>
 								<th>Form</th>
 								<th> - </th>
@@ -216,20 +241,6 @@
 							</tr>
 						</table>
 					</table>
-					
-					<form>
-						<table style="float: left; padding: 20px; background: white;">
-							<tr>
-							<th>My Budget Options</th>
-							</tr>
-							<tr>
-							<th>My Budget Options</th>
-							</tr>
-							<tr>
-							<th>My Budget Options</th>
-							</tr>
-						</table>
-					</form>
 			</form>
 		</div>
 
@@ -280,7 +291,7 @@
 							<td><output name="x" for="mPay mTutor mDisability mlWinnings mInheritance mOther"></output><br></td>
 						</tr>
 						
-						<table style="font-size:12px; background-color:Orange">
+						<table style=" position: fixed; bottom: 30px; font-size:12px; background-color:Orange">
 							<tr>
 								<th>Form</th>
 								<th> - </th>
@@ -316,7 +327,7 @@
 	</div>
 
 			<form>
-					<table style="position: fixed; right: 30px; bottom: 100px; width: 50px; padding:0 5px 0 0;; background: white;">
+					<table style="position: fixed; right: 5px; top: 5px; width: 50px; padding:0 5px 0 0;; background: #4682B4;">
 						<tr>
 							<th></th>
 							<th>Budget</th>	 
@@ -338,7 +349,7 @@
 					</table>
 			</form>
 			<form>
-				<table style="position: fixed; right: 10px; bottom: 30px; width: auto; padding:0 5px 0 0; font-size:12px; background-color:Orange">
+				<table style="position: fixed; left: 10px; top: 10px; width: auto; padding:0 5px 0 0; font-size:12px; background-color:Orange">
 							<tr>
 								<th>Page</th>
 								<th> - </th>
