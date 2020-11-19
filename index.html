@@ -26,12 +26,16 @@
 			document.getElementById("Income").style.backgroundColor=obj.value;
 		}
 		
+		function nameChange(input)
+		{
+			document.getElementById("yup").innerHTML = "Super Super Budget Calculator";
+		}
 	</script>
-	<header style="text-align: center;">
+	<header id="yup" style="text-align: center;">
 	<h1>
 		Super Budget Calculator
 	</h1>
-	
+	<button onclick="nameChange()">Push Me</button>
 		Fill out the table with values to fit your situation
 
   </header>
