@@ -109,6 +109,12 @@
 						<td><label for="x"> Total Certain = </label></td>
 						<td><output name="x" id="totFixed"></output></td>
 					</tr>
+					<tr>
+						<table>
+						<td><label for="Wizzy"> Certain Weekly Budget: </label></td>
+							<td><output name="Wizzy" value="totFixed" for="totFixed Wizzy"></output>
+						</table>
+					</tr>
 				</table>
 			</form>
 			<form>
@@ -123,7 +129,7 @@
 					</tr>
 					<tr>
 						<td align="center"><label for="white"> White: </label></td>
-						<td align="center"><input type="radio" name="colors" value="white" onclick="fixedColorChange(this)"></td>
+						<td align="center"><input type="radio" name="colors" value="white" onclick="fixedColorChange(this);"></td>
 						<td align="center"><label for="gray"> Gray: </label></td>
 						<td align="center"><input type="radio" name="colors" value="gray" onclick="fixedColorChange(this)"></td>
 						<td align="center"><label for="lime"> Lime: </label></td>
