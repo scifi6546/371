@@ -66,6 +66,7 @@ input[type=number]
 	float: left;
 	width: 33.33%;
 	padding: 10px;
+	padding-top: 30px;
 	height: auto;
  }
 
