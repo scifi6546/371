@@ -24,12 +24,7 @@
 		function incomeColorChange(obj)
 		{
 			document.getElementById("Income").style.backgroundColor=obj.value;
-		}
-		
-		function optimizeAuto()
-		{
-			;
-		}
+		}	
 		
 	</script>
 	<header id="intro" style="text-align: center;">
@@ -115,10 +110,6 @@
 						<td><label for="x"> Total Certain = </label></td>
 						<td><output name="x" id="totFixed"></output></td>
 					</tr>
-					
-					<table>
-					
-					</table>
 				</table>
 			</form>
 			<form>
@@ -152,7 +143,7 @@
 		</div>
 
 		<div class="column 2;">
-			<form oninput="y.value=parseInt(mElectric.value)+ parseInt(mWater.value) + parseInt(mInternet.value) + parseInt(mhFuel.value) + parseInt(mFood.value) + parseInt(mccBills.value)+ parseInt(mlBills.value)+ parseInt(moBills.value)+ parseInt(mtBills.value)+ parseInt(mlsBills.value)+ parseInt(mcmBills.value)">
+			<form id="mid" oninput="y.value=parseInt(mElectric.value)+ parseInt(mWater.value) + parseInt(mInternet.value) + parseInt(mhFuel.value) + parseInt(mFood.value) + parseInt(mccBills.value)+ parseInt(mlBills.value)+ parseInt(moBills.value)+ parseInt(mtBills.value)+ parseInt(mlsBills.value)+ parseInt(mcmBills.value)">
 				<table id = "Variable" style="float: left; padding: 20px; background: white;">
 					<tr>
 						<th> Monthly </th>
@@ -220,9 +211,10 @@
 					<td><br></td>
 					<tr>
 						<td><label for="y"> Total Uncertain = </label><br></td>
-						<td><output name="y" for="mElectric mWater mInternet mhFuel mFood mccBills mlBills moBills mtBills mlsBills mcmBills"></output></td>
+						<td><output name="y" id="totVar" for="mElectric mWater mInternet mhFuel mFood mccBills mlBills moBills mtBills mlsBills mcmBills"></output></td>
 					</tr>
 				</table>	
+			</form>
 			<form>
 				<table style="position: fixed; bottom: 30px; font-size:12px; background-color:Orange">
 					<tr>
@@ -297,7 +289,7 @@
 					<td><br></td>
 					<tr>
 						<td><label for="x"> Total Income = </label><br></td>
-						<td><output name="x" for="mPay mTutor mDisability mlWinnings mInheritance mOther"></output><br></td>
+						<td><output name="x" id="totIncome" for="mPay mTutor mDisability mlWinnings mInheritance mOther"></output><br></td>
 					</tr>
 				</table>
 			</form>
@@ -342,15 +334,15 @@
 				</tr>
 				<tr>
 					<td> <label style="font-size: 110%; color:white;" for="autoWiz">Auto Wizard</label></td>
-					<td> <input type="radio" id="optimizer" value = "autoWiz" onclick="optimizeAuto(this)"></td>
+					<td> <input type="radio" id="choice1" name="optimizer" value = "autoWiz" onclick="optimizeAuto(this)"></td>
 					<td> <label style="font-size: 110%; color:white;" for="autoWiz" for="70/20/10">70/20/10</label></td>
-					<td> <input type="radio" id="optimizer" value = "70/20/10" onclick="optimize702010(this)"></td>
+					<td> <input type="radio" id="choice2" name="optimizer" value = "70/20/10" onclick="optimize702010(this)"></td>
 				</tr>
 				<tr>
 					<td> <label style="font-size: 110%; color:white;" for="autoWiz" for="DIY">DIY</label></td>
-					<td> <input type="radio" id="optimizer" value = "DIY" onclick="optimizeDIY(this)"></td>
+					<td> <input type="radio" id="choice3" name="optimizer" value = "DIY" onclick="optimizeDIY(this)"></td>
 				 	<td> <label style="font-size: 110%; color:white;" for="autoWiz" for="other">Other</label></td>
-					<td> <input type="radio" id="optimizer" value = "other" onclick="optimizeOther(this)"></td>
+					<td> <input type="radio" id="choice4" name="optimizer" value = "other" onclick="optimizeOther(this)"></td>
 				</tr>
 			</table>
 		</form>
