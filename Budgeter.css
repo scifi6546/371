@@ -39,7 +39,7 @@ input[type=number]
 	-moz-appearance: textfield;
 }
 
-#fancyInput
+.fancyInput
 {
 	border: 0 solid;
 	padding: 10px;
@@ -48,7 +48,7 @@ input[type=number]
 	width: 7em;
 }
 
-#lessFancyInput
+.lessFancyInput
 {
 	border: 0 solid;
 	padding: 10px;
