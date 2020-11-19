@@ -49,7 +49,7 @@
 							<th> Monthly </th>
 						</tr>
 						<tr>
-							<th>Fixed Costs</th>
+							<th>Certain Costs</th>
 							<th>Input</th>
 							<th>Budget</th>
 						</tr>
@@ -111,12 +111,13 @@
 						</tr>
 							<td><br></td>
 						<tr>
-							<td><label for="x"> Total Fixed Costs = </label></td>
+							<td><label for="x"> Total Certain = </label></td>
 							<td><output name="x" id="totFixed"></output></td>
 						</tr>
+						
 						<table>
 							<tr>
-							<label for="fixedUserEdit"> Edit:</label>
+							<label for="fixedUserEdit"> Edit Label: </label>
 								<select name="fixedUserEdit" id="fixedEdit">
 									<option value="mCell">Cell Bill</option>
 									<option value="mCar">Car Bill</option>
@@ -134,9 +135,13 @@
 							<br> <br>
 							<tr>
 								<label for="fixedUserInput"> New Cost: </label>
+							</tr>
+							<tr>
 								<input type="text" id ="fancyInput" name="fixedUserInput" onfocus="this.value=''" value="Name">
+								<button onclick="">Change Certain Cost Name</button>
 							</tr>
 						</table>
+
 					</table>
 			</form>
 			<form>
@@ -176,7 +181,7 @@
 							<th> Monthly </th>
 						</tr>
 						<tr>
-							<th>Variable Costs</th>
+							<th>Uncertain Costs</th>
 							<th>Input</th>
 							<th>Budget</th>
 						</tr>
@@ -237,12 +242,12 @@
 						</tr>
 						<td><br></td>
 						<tr>
-							<td><label for="y"> Total Expenses(Var) = </label><br></td>
+							<td><label for="y"> Total Uncertain = </label><br></td>
 							<td><output name="y" for="mElectric mWater mInternet mhFuel mFood mccBills mlBills moBills mtBills mlsBills mcmBills"></output></td>
 						</tr>
 						<table>
 							<tr>
-								<label for="varUserEdit">Edit:</label>
+								<label for="varUserEdit"> Edit Label: </label>
 								<select name="varUserEdit" id="varEdit">
 									<option value="mElectric">Electric</option>
 									<option value="mWater">Water</option>
@@ -260,7 +265,10 @@
 							<br> <br>
 							<tr>
 								<label for="fixedUserInput"> New Cost: </label>
+							</tr>
+							<tr>
 								<input type="text" id ="fancyInput" name="fixedUserInput" onfocus="this.value=''" value="Name">
+								<button onclick="">Change Uncertain Cost Name</button>
 							</tr>
 						</table>
 						<table style="position: fixed; bottom: 30px; font-size:12px; background-color:Orange">
@@ -341,7 +349,7 @@
 						</tr>
 						<table>
 							<tr>
-								<label for="incomeUserEdit">Edit:</label>
+								<label for="incomeUserEdit"> Edit Label: </label>
 								<select name="incomeUserEdit" id="incomeEdit">
 									<option value="mPay">Job Pay</option>
 									<option value="mTutor">Tutoring Pay</option>
@@ -354,7 +362,10 @@
 							<br> <br>
 							<tr>
 								<label for="fixedUserInput"> New Income: </label>
+							</tr>
+							<tr>
 								<input type="text" id ="fancyInput" name="fixedUserInput" onfocus="this.value=''" value="Name">
+								<button onclick="">Change Income Name</button>
 							</tr>
 						</table>
 						
