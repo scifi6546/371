@@ -28,8 +28,9 @@
 		
 		function optimizeAuto()
 		{
-			
+			;
 		}
+		
 	</script>
 	<header id="intro" style="text-align: center;">
 	<h1>
@@ -55,57 +56,58 @@
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" onpaste="return false;" contenteditable="true" for="mCell" id="lessFancyInput" maxlength="5"> Cell Bill: </label></td>
-						<td><input oninput="return(this.innerText.length <= 9)" onpaste="return false;" type="number" id="fancyInput" name="mCell" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id="fancyInput" name="mCell" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><output 
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mCar" id="lessFancyInput"> Car Bill: </label></td>
-						<td><input type="number" id ="fancyInput" name="mCar" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mCar" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mCInsurance" id="lessFancyInput"> Car Insurance: </label></td>
-						<td><input type="number" id ="fancyInput" name="mCInsurance" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mCInsurance" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mRent" id="lessFancyInput"> Mortgage/Rent: </label></td>
-						<td><input type="number" id ="fancyInput" name="mRent" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mRent" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mGarbage" id="lessFancyInput"> Garbage: </label></td>
-						<td><input type="number" id ="fancyInput" name="mGarbage" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mGarbage" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mHInsurance" id="lessFancyInput"> Health Insurance: </label></td>
-						<td><input type="number" id ="fancyInput" name="mHInsurance" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mHInsurance" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mHulu" id="lessFancyInput"> Hulu: </label></td>
-						<td><input type="number" id ="fancyInput" name="mHulu" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mHulu" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mNetflix" id="lessFancyInput"> Netflix: </label></td>
-						<td><input type="number" id ="fancyInput" name="mNetflix" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mNetflix" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mXBXLive" id="lessFancyInput"> Xbox Live: </label></td>
-						<td><input type="number" id ="fancyInput" name="mXBXLive" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mXBXLive" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mPrime" id="lessFancyInput"> Amazon Prime: </label></td>
-						<td><input type="number" id ="fancyInput" name="mPrime" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mPrime" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mDisneyPlus" id="lessFancyInput"> Disney Plus: </label></td>
-						<td><input type="number" id ="fancyInput" name="mDisneyPlus" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mDisneyPlus" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 						<td><br></td>
@@ -162,57 +164,57 @@
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mElectric" id="lessFancyInput"> Electric: </label></td>
-						<td><input type="number" id ="fancyInput" name="mElectric" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mElectric" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mWater" id="lessFancyInput"> Water: </label></td>
-						<td><input type="number" id ="fancyInput" name="mWater" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mWater" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mInternet" id="lessFancyInput"> Internet: </label></td>
-						<td><input type="number" id ="fancyInput" name="mInternet" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mInternet" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mhFuel" id="lessFancyInput"> House Fuel: </label></td>
-						<td><input type="number" id ="fancyInput" name="mhFuel" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mhFuel" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mFood" id="lessFancyInput"> Food: </label></td>
-						<td><input type="number" id ="fancyInput" name="mFood" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mFood" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mccBills" id="lessFancyInput"> Credit Cards: </label></td>
-						<td><input type="number" id ="fancyInput" name="mccBills" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mccBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mlBills" id="lessFancyInput"> Loans: </label></td>
-						<td><input type="number" id ="fancyInput" name="mlBills" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mlBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="moBills" id="lessFancyInput"> Other: </label></td>
-						<td><input type="number" id ="fancyInput" name="moBills" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="moBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mtBills" id="lessFancyInput"> Taxes: </label></td>
-						<td><input type="number" id ="fancyInput" name="mtBills" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mtBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mlsBills" id="lessFancyInput"> Loan Shark: </label></td>
-						<td><input type="number" id ="fancyInput" name="mlsBills" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mlsBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mcmBills" id="lessFancyInput"> Club Membership: </label></td>
-						<td><input type="number" id ="fancyInput" name="mcmBills" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mcmBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<td><br></td>
@@ -264,32 +266,32 @@
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mPay" id="lessFancyInput"> Job Pay: </label></td>
-						<td><input type="number" id ="fancyInput" name="mPay" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mPay" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mTutor" id="lessFancyInput"> Tutoring Pay: </label></td>
-						<td><input type="number" id ="fancyInput" name="mTutor" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mTutor" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mDisability" id="lessFancyInput"> Disability Pay: </label></td>
-						<td><input type="number" id ="fancyInput" name="mDisability" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mDisability" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mlWinnings" id="lessFancyInput"> Lottery Winnings: </label></td>
-						<td><input type="number" id ="fancyInput" name="mlWinnings" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mlWinnings" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mInheritance" id="lessFancyInput"> Inheritance Pay: </label></td>
-						<td><input type="number" id ="fancyInput" name="mInheritance" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mInheritance" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" id="lessFancyInput"> Other Pay: </label></td>
-						<td><input type="number" id ="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value=0 min=0 max=999999999></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" id ="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						<td>Options</td>
 					</tr>
 					<td><br></td>
