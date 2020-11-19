@@ -26,6 +26,10 @@
 			document.getElementById("Income").style.backgroundColor=obj.value;
 		}
 		
+		function optimizeAuto()
+		{
+			
+		}
 	</script>
 	<header id="intro" style="text-align: center;">
 	<h1>
@@ -323,23 +327,23 @@
 	</div>
 
 		<form>
-			<table style="position: fixed; right: 5px; top: 5px; width: 50px; padding:0 5px 0 0;; background: #4682B4;">
+			<table style="position: fixed; right: 5px; top: 5px; width: 50px; padding:0 5px 0 0; background: #4682B4;">
 				<tr>
 					<th></th>
-					<th>Budget</th>	 
-					<th>Selection</th>	 
+					<th style="font-size: 150%; color:white;">Budget</th>	 
+					<th style="font-size: 150%; color:white;">Selection</th>	 
 					<th></th>	 							
 				</tr>
 				<tr>
-					<td> <label for="autoWiz">Auto Wizard</label></td>
+					<td> <label style="font-size: 110%; color:white;" for="autoWiz">Auto Wizard</label></td>
 					<td> <input type="radio" id="optimizer" value = "autoWiz" onclick="optimizeAuto(this)"></td>
-					<td> <label for="70/20/10">70/20/10</label></td>
+					<td> <label style="font-size: 110%; color:white;" for="autoWiz" for="70/20/10">70/20/10</label></td>
 					<td> <input type="radio" id="optimizer" value = "70/20/10" onclick="optimize702010(this)"></td>
 				</tr>
 				<tr>
-					<td> <label for="DIY">DIY</label></td>
+					<td> <label style="font-size: 110%; color:white;" for="autoWiz" for="DIY">DIY</label></td>
 					<td> <input type="radio" id="optimizer" value = "DIY" onclick="optimizeDIY(this)"></td>
-				 	<td> <label for="other">Other</label></td>
+				 	<td> <label style="font-size: 110%; color:white;" for="autoWiz" for="other">Other</label></td>
 					<td> <input type="radio" id="optimizer" value = "other" onclick="optimizeOther(this)"></td>
 				</tr>
 			</table>
@@ -373,7 +377,7 @@
 			</table>
 		</form>
 	</body>
-	<footer position: absolute; bottom: 10px;>
+	<footer position: absolute; bottom: 10 px;>
 		I live at the bottom.
 	</footer>
 
