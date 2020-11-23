@@ -39,7 +39,7 @@
   <body>
 	<div class="row 1">
 		<div class="column 1;">
-			<form id = "top" oninput="x.value=parseInt(mCell.value)+ parseInt(mCar.value)+ parseInt(mCInsurance.value)+ parseInt(mRent.value)+ parseInt(mGarbage.value) + parseInt(mHInsurance.value)+ parseInt(mHulu.value)+ parseInt(mNetflix.value)+ parseInt(mXBXLive.value)+ parseInt(mPrime.value)+ parseInt(mDisneyPlus.value);">
+			<form id = "top" oninput="x.value=parseInt(mCell.value)+ parseInt(mCar.value)+ parseInt(mCInsurance.value)+ parseInt(mRent.value)+ parseInt(mGarbage.value) + parseInt(mHInsurance.value)+ parseInt(mHulu.value)+ parseInt(mNetflix.value)+ parseInt(mXBXLive.value)+ parseInt(mPrime.value)+ parseInt(mDisneyPlus.value)+ parseInt(mcotherCost.value);">
 				<table id = "Fixed" style="float: left; padding: 20px; background: white;">
 					<tr>
 						<th> Monthly </th>
@@ -129,9 +129,9 @@
 					</tr>
 					<tr>
 						<!-- Editable Label - Restricting length to reduce formatting errors -->
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mcotherCost" class="lessFancyInput"> Other Cost: </label></td>
 						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mcotherCost" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 						<td><br></td>
