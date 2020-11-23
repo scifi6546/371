@@ -191,7 +191,7 @@
 		</div>
 
 		<div class="column 2;">
-			<form id="mid" oninput="y.value=parseInt(mElectric.value)+ parseInt(mWater.value) + parseInt(mInternet.value) + parseInt(mhFuel.value) + parseInt(mFood.value) + parseInt(mccBills.value)+ parseInt(mlBills.value)+ parseInt(moBills.value)+ parseInt(mtBills.value)+ parseInt(mlsBills.value)+ parseInt(mcmBills.value)">
+			<form id="mid" oninput="y.value=parseInt(mElectric.value)+ parseInt(mWater.value) + parseInt(mInternet.value) + parseInt(mhFuel.value) + parseInt(mFood.value) + parseInt(mccBills.value)+ parseInt(mlBills.value)+ parseInt(moBills.value)+ parseInt(mtBills.value)+ parseInt(mlsBills.value)+ parseInt(mcmBills.value)+ parseInt(motherCost.value)">
 				<table id = "Variable" style="float: left; padding: 20px; background: white;">
 					<tr>
 						<th> Monthly </th>
@@ -280,9 +280,9 @@
 					</tr>
 					<tr>
 						<!-- Editable Label - Restricting length to reduce formatting errors -->
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="motherCost" class="lessFancyInput"> Other Cost: </label></td>
 						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="motherCost" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<td><br></td>
@@ -290,7 +290,7 @@
 						<!-- Label for the Total Uncertain Costs -->
 						<td><label for="y"> Total Uncertain = </label><br></td>
 						<!-- Output of all Unertain cost inputs added together -->
-						<td><output name="y" id="totVar" for="mElectric mWater mInternet mhFuel mFood mccBills mlBills moBills mtBills mlsBills mcmBills"></output></td>
+						<td><output name="y" id="totVar" for="mElectric mWater mInternet mhFuel mFood mccBills mlBills moBills mtBills mlsBills mcmBills motherCost"></output></td>
 					</tr>
 					<tr>
 						<td><table></td>
