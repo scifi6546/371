@@ -74,7 +74,7 @@
 					<tr>
 						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mRent" class="lessFancyInput"> Mortgage/Rent: </label></td>
-						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set --><td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mRent" class="lessFancyInput"> Mortgage/Rent: </label></td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
 						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mRent" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
