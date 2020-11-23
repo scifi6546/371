@@ -6,21 +6,22 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initia;-scale=1">
 	<script>
+		<!-- Change overall document background-->
 		function colorChange(obj)
 		{
 			document.body.style.backgroundColor=obj.value;
 		}
-
+		<!-- Change fixed cost background-->
 		function fixedColorChange(obj)
 		{
 			document.getElementById("Fixed").style.backgroundColor=obj.value;
 		}
-
+		<!-- Change variable cost background-->
 		function varColorChange(obj)
 		{
 			document.getElementById("Variable").style.backgroundColor=obj.value;
 		}
-
+		<!-- Change income background-->
 		function incomeColorChange(obj)
 		{
 			document.getElementById("Income").style.backgroundColor=obj.value;
@@ -49,69 +50,95 @@
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting paste & length to reduce formatting errors -->
 						<td><label onkeydown="return (this.innerText.length <= 16)" onpaste="return false;" contenteditable="true" for="mCell" class="lessFancyInput"> Cell Bill: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mCell" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mCell" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						<td><output 
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mCar" class="lessFancyInput"> Car Bill: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mCar" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mCar" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mCInsurance" class="lessFancyInput"> Car Insurance: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mCInsurance" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mCInsurance" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mRent" class="lessFancyInput"> Mortgage/Rent: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mRent" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set --><td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mRent" class="lessFancyInput"> Mortgage/Rent: </label></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mRent" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mGarbage" class="lessFancyInput"> Garbage: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mGarbage" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mGarbage" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mHInsurance" class="lessFancyInput"> Health Insurance: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mHInsurance" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mHInsurance" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mHulu" class="lessFancyInput"> Hulu: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mHulu" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mHulu" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mNetflix" class="lessFancyInput"> Netflix: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mNetflix" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mNetflix" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mXBXLive" class="lessFancyInput"> Xbox Live: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mXBXLive" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mXBXLive" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mPrime" class="lessFancyInput"> Amazon Prime: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mPrime" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mPrime" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mDisneyPlus" class="lessFancyInput"> Disney Plus: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mDisneyPlus" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mDisneyPlus" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 						<td><br></td>
 					<tr>
+						<!-- Label for the Total Certain Costs -->
 						<td><label for="x"> Total Certain = </label></td>
+						<!-- Output of all Certain cost inputs added together -->
 						<td><output name="x" id="totFixed"></output></td>
 					</tr>
 					<tr>
@@ -175,68 +202,94 @@
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mElectric" class="lessFancyInput"> Electric: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mElectric" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mElectric" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mWater" class="lessFancyInput"> Water: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mWater" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mWater" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mInternet" class="lessFancyInput"> Internet: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mInternet" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mInternet" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mhFuel" class="lessFancyInput"> House Fuel: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mhFuel" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mhFuel" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mFood" class="lessFancyInput"> Food: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mFood" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mFood" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mccBills" class="lessFancyInput"> Credit Cards: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mccBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mccBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mlBills" class="lessFancyInput"> Loans: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mlBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mlBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="moBills" class="lessFancyInput"> Other: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="moBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="moBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mtBills" class="lessFancyInput"> Taxes: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mtBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mtBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mlsBills" class="lessFancyInput"> Loan Shark: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mlsBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mlsBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+						<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mcmBills" class="lessFancyInput"> Club Membership: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mcmBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mcmBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
+					<!-- Editable Label - Restricting length to reduce formatting errors -->
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<td><br></td>
 					<tr>
+						<!-- Label for the Total Uncertain Costs -->
 						<td><label for="y"> Total Uncertain = </label><br></td>
+						<!-- Output of all Unertain cost inputs added together -->
 						<td><output name="y" id="totVar" for="mElectric mWater mInternet mhFuel mFood mccBills mlBills moBills mtBills mlsBills mcmBills"></output></td>
 					</tr>
 					<tr>
@@ -289,7 +342,7 @@
 		</div>
 
 		<div class="column 3;">
-			<form oninput="x.value=parseInt(mPay.value)+ parseInt(mTutor.value) + parseInt(mDisability.value) + parseInt(mlWinnings.value) + parseInt(mInheritance.value) + parseInt(mOther.value)">
+			<form oninput="x.value=parseInt(mPay.value)+ parseInt(mTutor.value) + parseInt(mDisability.value) + parseInt(mlWinnings.value) + parseInt(mInheritance.value) + parseInt(mOther.value)+ parseInt(mOther1.value)+ parseInt(mOther2.value)+ parseInt(mOther3.value)+ parseInt(mOther4.value)+ parseInt(mOther5.value)+ parseInt(mOther6.value)">
 				<table id = "Income" style="float: left; top: 0; padding: 20px; background: white;">
 					<tr>
 						<th> Monthly </th>
@@ -301,68 +354,68 @@
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mPay" class="lessFancyInput"> Job Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mPay" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mPay" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mTutor" class="lessFancyInput"> Tutoring Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mTutor" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mTutor" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mDisability" class="lessFancyInput"> Disability Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mDisability" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mDisability" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mlWinnings" class="lessFancyInput"> Lottery Winnings: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mlWinnings" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mlWinnings" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mInheritance" class="lessFancyInput"> Inheritance Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mInheritance" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mInheritance" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
 						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther1" class="lessFancyInput"> Other1 Pay: </label></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther1" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther2" class="lessFancyInput"> Other2 Pay: </label></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther2" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther3" class="lessFancyInput"> Other3 Pay: </label></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther3" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther4" class="lessFancyInput"> Other4 Pay: </label></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther4" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther5" class="lessFancyInput"> Other5 Pay: </label></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther5" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther6" class="lessFancyInput"> Other6 Pay: </label></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther6" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
 						
 					</tr>
 					<td><br></td>
 					<tr>
 						<td><label for="x"> Total Income = </label><br></td>
-						<td><output name="x" id="totIncome" for="mPay mTutor mDisability mlWinnings mInheritance mOther"></output><br></td>
+						<td><output name="x" id="totIncome" for="mPay mTutor mDisability mlWinnings mInheritance mOther mOther1 mOther2 mOther3 mOther4 mOther5 mOther6"></output><br></td>
 					</tr>
 					<tr>
 						<td><table></td>
