@@ -54,9 +54,7 @@
 						<!-- Editable Label - Restricting paste & length to reduce formatting errors -->
 						<td><label onkeydown="return (this.innerText.length <= 16)" onpaste="return false;" contenteditable="true" for="mCell" class="lessFancyInput"> Cell Bill: </label></td>
 						<!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 -->
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mCell" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>
-						<td><output 
-						
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mCell" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999.99"</td>		
 					</tr>
 					<tr>
 						<!-- Editable Label - Restricting length to reduce formatting errors -->
@@ -158,6 +156,16 @@
 								<td><output name="wSavings" ></output></td>
 							<td></tr></td>	
 						<td></table></td>
+					</tr>
+					<tr>	 
+							<label for="budgets" style="font-size: 150%; color:white; background: #4682B4;">Budget Selection:</label>
+
+							<select name="budgets" id="budgets">
+							  <option value="autoWiz">Auto Wizard</option>
+							  <option value="7-2-1">70/20/10</option>
+							  <option value="DIY">DIY</option>
+							  <option value="other">Other</option>
+							</select>
 					</tr>
 				</table>
 			</form>
@@ -297,13 +305,13 @@
 					</tr>
 					<tr>
 						<td><table></td>
-						<td><th>Budget</th></td>
+						<td><th>Budget Total</th></td>
 							<td><tr></td>
-								<td><label for="wBudget"> Total Weekly Out: </label></td>
+								<td><label for="wBudget">Weekly Out: </label></td>
 								<td><output name="wBudget" </output></td>
 							<td></tr></td>
 							<td><tr></td>
-								<td><label for="wOUBudget"> Total Weekly Over/Under:  </label></td>
+								<td><label for="wOUBudget"> Weekly +/-:  </label></td>
 								<td><output name="wOUBudget" ></output></td>
 							<td></tr></td>
 							<td><tr></td>
@@ -311,6 +319,16 @@
 								<td><output name="wSavings" ></output></td>
 							<td></tr></td>	
 						<td></table></td>
+					</tr>
+					<tr>	 
+							<label for="budgets" style="font-size: 150%; color:white; background: #4682B4;">Budget Selection:</label>
+
+							<select name="budgets" id="budgets">
+							  <option value="autoWiz">Auto Wizard</option>
+							  <option value="7-2-1">70/20/10</option>
+							  <option value="DIY">DIY</option>
+							  <option value="other">Other</option>
+							</select>
 					</tr>
 				</table>	
 			</form>
