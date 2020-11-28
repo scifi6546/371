@@ -182,7 +182,7 @@
 						<th>Select</th>
 						<th></th>
 					</tr>
-					<tr>
+					<tr>	<!-- Color Selection Options  -->
 						<td align="center"><label for="white"> White: </label></td>
 						<td align="center"><input type="radio" name="colors" value="white" onclick="fixedColorChange(this);"></td>
 						<td align="center"><label for="gray"> Gray: </label></td>
@@ -190,7 +190,7 @@
 						<td align="center"><label for="lime"> Lime: </label></td>
 						<td align="center"><input type="radio" name="colors" value="lime" onclick="fixedColorChange(this)"></td>
 					</tr>
-					<tr>	
+					<tr>	<!-- Color Selection Options  -->
 						<td align="center"><label for="red"> Red: </label></td>
 						<td align="center"><input type="radio" name="colors" value="#D21F3C" onclick="fixedColorChange(this)"></td>
 						<td align="center"><label for="blue"> Blue: </label></td>
@@ -346,7 +346,7 @@
 						<th>Select</th>
 						<th></th>
 					</tr>
-					<tr>
+					<tr>	<!-- Color Selection Options  -->
 						<td align="center"><label for="white"> White: </label></td>
 						<td align="center"><input type="radio" name="colors" value="white" onclick="varColorChange(this)"></td>
 						<td align="center"><label for="gray"> Gray: </label></td>
@@ -354,7 +354,7 @@
 						<td align="center"><label for="lime"> Lime: </label></td>
 						<td align="center"><input type="radio" name="colors" value="lime" onclick="varColorChange(this)"></td>
 					</tr>
-					<tr>	
+					<tr>	<!-- Color Selection Options  -->
 						<td align="center"><label for="red"> Red: </label></td>
 						<td align="center"><input type="radio" name="colors" value="#D21F3C" onclick="varColorChange(this)"></td>
 						<td align="center"><label for="blue"> Blue: </label></td>
@@ -499,7 +499,7 @@
 						<th>Select</th>
 						<th></th>
 					</tr>
-					<tr>
+					<tr>	<!-- Color Selection Options  -->
 						<td align="center"><label for="white"> White: </label></td>
 						<td align="center"><input type="radio" name="colors" value="white" onclick="incomeColorChange(this)"></td>
 						<td align="center"><label for="gray"> Gray: </label></td>
@@ -507,7 +507,7 @@
 						<td align="center"><label for="lime"> Lime: </label></td>
 						<td align="center"><input type="radio" name="colors" value="lime" onclick="incomeColorChange(this)"></td>
 					</tr>
-					<tr>	
+					<tr>	<!-- Color Selection Options  -->
 						<td align="center"><label for="red"> Red: </label></td>
 						<td align="center"><input type="radio" name="colors" value="#D21F3C" onclick="incomeColorChange(this)"></td>
 						<td align="center"><label for="blue"> Blue: </label></td>
@@ -521,6 +521,7 @@
 	</div>
 
 		<form>
+			<!-- Fixed Position Budget Selection Table  -->
 			<table style="position: fixed; right: 5px; top: 5px; width: 50px; padding:0 5px 0 0; background: #4682B4;">
 				<tr>
 					<th></th>
@@ -528,13 +529,13 @@
 					<th style="font-size: 150%; color:white;">Selection</th>	 
 					<th></th>	 							
 				</tr>
-				<tr>
+				<tr>	<!-- Budget Selection Options  -->
 					<td> <label style="font-size: 110%; color:white;" for="autoWiz">Auto Wizard</label></td>
 					<td> <input type="radio" id="choice1" name="optimizer" value = "autoWiz" onclick="optimizeAuto(this)"></td>
 					<td> <label style="font-size: 110%; color:white;" for="autoWiz" for="70/20/10">70/20/10</label></td>
 					<td> <input type="radio" id="choice2" name="optimizer" value = "70/20/10" onclick="optimize702010(this)"></td>
 				</tr>
-				<tr>
+				<tr>	<!-- Budget Selection Options  -->
 					<td> <label style="font-size: 110%; color:white;" for="autoWiz" for="DIY">DIY</label></td>
 					<td> <input type="radio" id="choice3" name="optimizer" value = "DIY" onclick="optimizeDIY(this)"></td>
 				 	<td> <label style="font-size: 110%; color:white;" for="autoWiz" for="other">Other</label></td>
@@ -543,6 +544,7 @@
 			</table>
 		</form>
 		<form>
+			<!-- Fixed Position Color Selection Table  --> <!-- Color Selection Options  -->
 			<table style="position: fixed; left: 10px; top: 10px; width: auto; padding:0 5px 0 0; font-size:12px; background-color:Orange">
 				<tr>
 					<th>Page</th>
@@ -552,7 +554,7 @@
 					<th>Select</th>
 					<th></th>
 				</tr>
-				<tr>
+				<tr>	<!-- Color Selection Options  -->
 					<td align="center"><label for="white"> White: </label></td>
 					<td align="center"><input type="radio" name="colors" value="white" onclick="colorChange(this)"></td>
 					<td align="center"><label for="gray"> Gray: </label></td>
@@ -560,7 +562,7 @@
 					<td align="center"><label for="lime"> Lime: </label></td>
 					<td align="center"><input type="radio" name="colors" value="lime" onclick="colorChange(this)"></td>
 				</tr>
-				<tr>	
+				<tr>	<!-- Color Selection Options  -->
 					<td align="center"><label for="red"> Red: </label></td>
 					<td align="center"><input type="radio" name="colors" value="#D21F3C" onclick="colorChange(this)"></td>
 					<td align="center"><label for="blue"> Blue: </label></td>
@@ -570,6 +572,9 @@
 				</tr>
 			</table>
 		</form>
+	<footer>
+		
+	</footer>
 	</body>
 	<footer position: absolute; bottom: 10 px;>
 		
