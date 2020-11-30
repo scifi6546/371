@@ -40,7 +40,7 @@
 	<div class="row 1">
 		<div class="column 1;">
 			<!-- Form to input Certain Monthly Costs, updates on input and totals input -->
-			<form id = "top" oninput="x.value=parseFloat(mCell.value)+ parseFloat(mCar.value)+ parseFloat(mCInsurance.value)+ parseFloat(mRent.value)+ parseFloat(mGarbage.value) + parseFloat(mHInsurance.value)+ parseFloat(mHulu.value)+ parseFloat(mNetflix.value)+ parseFloat(mXBXLive.value)+ parseFloat(mPrime.value)+ parseFloat(mDisneyPlus.value)+ parseFloat(mcotherCost.value);">
+			<form id = "top" oninput="x.value=(parseFloat(mCell.value)+ parseFloat(mCar.value)+ parseFloat(mCInsurance.value)+ parseFloat(mRent.value)+ parseFloat(mGarbage.value) + parseFloat(mHInsurance.value)+ parseFloat(mHulu.value)+ parseFloat(mNetflix.value)+ parseFloat(mXBXLive.value)+ parseFloat(mPrime.value)+ parseFloat(mDisneyPlus.value)+ parseFloat(mcotherCost.value)).toFixed(2);">
 				<table id = "Fixed" style="float: left; padding: 20px; background: white;">
 					<tr>
 						<th> Certain Costs </th>
@@ -203,8 +203,8 @@
 		</div>
 
 		<div class="column 2;">
-			<!-- Form to input Uncertain Monthly Costs, updates on input and totals input -->
-			<form id="mid" oninput="y.value=parseFloat(mElectric.value)+ parseFloat(mWater.value) + parseFloat(mInternet.value) + parseFloat(mhFuel.value) + parseFloat(mFood.value) + parseFloat(mccBills.value)+ parseFloat(mlBills.value)+ parseFloat(moBills.value)+ parseFloat(mtBills.value)+ parseFloat(mlsBills.value)+ parseFloat(mcmBills.value)+ parseFloat(motherCost.value)">
+			<!-- Form to input Uncertain Monthly Costs, updates on input and totals input, restricts to 2 decimal places on output -->
+			<form id="mid" oninput="y.value=(parseFloat(mElectric.value)+ parseFloat(mWater.value) + parseFloat(mInternet.value) + parseFloat(mhFuel.value) + parseFloat(mFood.value) + parseFloat(mccBills.value)+ parseFloat(mlBills.value)+ parseFloat(moBills.value)+ parseFloat(mtBills.value)+ parseFloat(mlsBills.value)+ parseFloat(mcmBills.value)+ parseFloat(motherCost.value)).toFixed(2)">
 				<table id = "Variable" style="float: left; padding: 20px; background: white;">
 					<tr>
 						<th> Uncertain Costs </th>
@@ -368,7 +368,7 @@
 
 		<div class="column 3;">
 			<!-- Form to Monthly Income, updates on input and totals input -->
-			<form oninput="x.value=parseFloat(mPay.value)+ parseFloat(mTutor.value) + parseFloat(mDisability.value) + parseFloat(mlWinnings.value) + parseFloat(mInheritance.value) + parseFloat(mOther.value)+ parseFloat(mOther1.value)+ parseFloat(mOther2.value)+ parseFloat(mOther3.value)+ parseFloat(mOther4.value)+ parseFloat(mOther5.value)+ parseFloat(mOther6.value)">
+			<form oninput="x.value=(parseFloat(mPay.value)+ parseFloat(mTutor.value) + parseFloat(mDisability.value) + parseFloat(mlWinnings.value) + parseFloat(mInheritance.value) + parseFloat(mOther.value)+ parseFloat(mOther1.value)+ parseFloat(mOther2.value)+ parseFloat(mOther3.value)+ parseFloat(mOther4.value)+ parseFloat(mOther5.value)+ parseFloat(mOther6.value)).toFixed(2)">
 				<table id = "Income" style="float: left; top: 0; padding: 20px; background: white;">
 					<tr>
 						<th> Income </th>
