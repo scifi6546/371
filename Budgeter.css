@@ -1,89 +1,80 @@
 input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button
-	{
-		-webkit-appearance: none;
-		margin: 0;
-	}
-
-header
-{
-
-	position: absolute;
-	top: 0;
-	background-color:orange;
-    height: 80px;
-	width:100%;
-
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
-body
-{
-	padding-top: 80px;
-	height: 100%;
-	width:100%;
-	div {display: inline-block}
-	.onLeft {width: 30%}
-	.onCenter {width: 40%}
-	.onRight {width: 30%}
+header {
+    background-color: orange;
 }
 
-footer
-{
-	position: absolute;
-	bottom:0;
-	width: 100%;
-	height: 2.5rem;
-}
-input[type=number]
-{
-	-moz-appearance: textfield;
+body {
+    padding-top: 80px;
+    height: 100%;
+    width: 100%;
 }
 
-.fancyInput
-{
-	border: 0 solid;
-	padding: 10px;
-	border-radius:10px;
-	box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
-	width: 7em;
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
 }
 
-.lessFancyInput
-{
-	border: 0 solid;
-	padding: 10px;
-	border-radius:10px;
-	border-bottom: 2px black;
-	width: 12em;
+input[type=number] {
+    -moz-appearance: textfield;
 }
 
-*{
-	box-sizing:border-box;
- }
+.body {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
 
- .column
- {
-	float: left;
-	width: 33.33%;
-	padding: 10px;
-	padding-top: 30px;
-	height: auto;
- }
+.fancyInput {
+    border: 0 solid;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    width: 7em;
+}
 
- .row:after
- (
-	content: ""
-	display: table;
-	clear: both;
- }
- .row
- {
-	float: left;
-	width: 33.33%;
-	height: auto;
-	position: relative;
-	padding: 10px;
- }
+.lessFancyInput {
+    border: 0 solid;
+    padding: 10px;
+    border-radius: 10px;
+    border-bottom: 2px black;
+    width: 12em;
+}
+
+.budget_items {
+    top: 0;
+    padding: 20px;
+    background: white;
+}
+
+.column {
+    padding: 10px;
+    padding-top: 30px;
+    width: 10cm;
+    height: auto;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row {
+    height: auto;
+    padding: 10px;
+}
+
+.color_selector {
+    width: auto;
+    font-size: 12px;
+    background-color: Orange
+}
 
 
 /*
