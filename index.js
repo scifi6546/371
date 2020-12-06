@@ -4,11 +4,11 @@ function main(){
 let global_costs = {}
 
 window.onload = main;
-function build_budget_entry(item_name,item_cost,multiplier,category_name){
+function build_budget_entry(item_name,display_name,item_cost,multiplier,category_name){
     let edit_str = build_edit_str(item_name,item_cost,multiplier,category_name);
            
     console.log(edit_str)
-    return "<div class=\" row\">"+item_name+"<input type = \"number\" oninput ="+edit_str+"onload = "+edit_str+" value=\""+item_cost+"\"/></div>"
+    return "<div class=\" row\">"+display_name+"<input type = \"number\" oninput ="+edit_str+"onload = "+edit_str+" value=\""+item_cost+"\"/></div>"
 }
 function build_edit_str(item_name,item_cost,multiplier,category_name){
     let edit_str =  '\'edit_price(this,\"'+
@@ -20,6 +20,7 @@ function build_edit_str(item_name,item_cost,multiplier,category_name){
 function setup_buttons(data){
     let top = document.getElementById("top")
     for(var i in data){
+        let form_parent = document.createElement("div");
         let form = document.createElement("div")
 
         let name_div = "<div class = \"item_name\">"+data[i].name+"</div>"
@@ -30,17 +31,18 @@ function setup_buttons(data){
             let edit_str = build_edit_str(data[i].items[j].name,data[i].items[j].cost,data[i].multiplier,data[i].name)
            
             console.log(edit_str)
-            let s = build_budget_entry(data[i].items[j].name,data[i].items[j].cost,data[i].multiplier,data[i].name)
+            let s = build_budget_entry(data[i].items[j].name,data[i].items[j].name,data[i].items[j].cost,data[i].multiplier,data[i].name)
             items_div.innerHTML+=s
            
         }
         form.appendChild(items_div)
         form.id=data[i].name
         console.log(form)
-        form.innerHTML+='<button onclick="add_budget_item(this,'+data[i].multiplier+',\''+data[i].name+'\')" >Add Item</button>';
         
         
-        top.appendChild(form)
+        form_parent.appendChild(form)
+        form_parent.innerHTML+='<button onclick="add_budget_item(this,'+data[i].multiplier+',\''+data[i].name+'\')" >Add Item</button>';
+        top.appendChild(form_parent)
         
         
     }
@@ -54,7 +56,7 @@ function setup_buttons(data){
 }
 function add_budget_item(div,multiplier,category_name){
     console.log("added")
-    document.getElementById(category_name).innerHTML+=build_budget_entry(String(Math.random()*1000000000),0.0,multiplier,category_name)
+    document.getElementById(category_name).innerHTML+=build_budget_entry(String(Math.random()*1000000000),"Unnamed",0.0,multiplier,category_name)
     console.log(div)
 
 
