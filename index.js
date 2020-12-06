@@ -4,29 +4,40 @@ function main(){
 let global_costs = {}
 
 window.onload = main;
+function build_budget_entry(item_name,item_cost,multiplier,category_name){
+    let edit_str = build_edit_str(item_name,item_cost,multiplier,category_name);
+           
+    console.log(edit_str)
+    return "<div class=\" row\">"+item_name+"<input type = \"number\" oninput ="+edit_str+"onload = "+edit_str+" value=\""+item_cost+"\"/></div>"
+}
+function build_edit_str(item_name,item_cost,multiplier,category_name){
+    let edit_str =  '\'edit_price(this,\"'+
+    item_name+'",'+item_cost+
+    
+    ",\""+multiplier+'","'+category_name+"\")'";
+    return edit_str
+}
 function setup_buttons(data){
     let top = document.getElementById("top")
     for(var i in data){
-        let form = document.createElement("form")
+        let form = document.createElement("div")
 
         let name_div = "<div class = \"item_name\">"+data[i].name+"</div>"
         form.innerHTML=name_div
         
         let items_div = document.createElement("div");
         for(var j in data[i].items){
-            let edit_str =  '\'edit_price(this,\"'+
-            data[i].items[j].name+'",'+data[i].items[j].cost+
-            
-            ",\""+data[i].multiplier+'","'+data[i].name+"\")'";
+            let edit_str = build_edit_str(data[i].items[j].name,data[i].items[j].cost,data[i].multiplier,data[i].name)
+           
             console.log(edit_str)
-            let s =  "<div class=\" row\">"+data[i].items[j].name+"<input type = \"number\" oninput ="+edit_str+"onload = "+edit_str+" value=\""+data[i].items[j].cost+"\"/></div>"
+            let s = build_budget_entry(data[i].items[j].name,data[i].items[j].cost,data[i].multiplier,data[i].name)
             items_div.innerHTML+=s
            
         }
         form.appendChild(items_div)
         form.id=data[i].name
         console.log(form)
-        
+        form.innerHTML+='<button onclick="add_budget_item(this,'+data[i].multiplier+',\''+data[i].name+'\')" >Add Item</button>';
         
         
         top.appendChild(form)
@@ -34,8 +45,12 @@ function setup_buttons(data){
     let final_cost = '<div class="total_cost" id="total_cost">'+String(0)+'</div>'
        top.innerHTML+=final_cost
 }
-function add_item(){
-    
+function add_budget_item(div,multiplier,category_name){
+    console.log("added")
+    document.getElementById(category_name).innerHTML+=build_budget_entry(String(Math.random()*1000000000),0.0,multiplier,category_name)
+    console.log(div)
+
+
 }
 function edit_price(div,item_name,item_cost,multiplier,category_name) {
     if(!global_costs[category_name]){
