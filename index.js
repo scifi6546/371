@@ -1,5 +1,5 @@
 function main(){
-    setup_buttons([{"name":"Needs","multiplier":-1.0,"items":[{"name":"rent","cost":100}]},{"name":"Wants","multiplier":1.0,},{"name":"Income","multiplier":1.0,"items":[{"name":"Job","cost":300}]}])
+    setup_buttons([{"name":"Needs","multiplier":-1.0,"items":[{"name":"rent","cost":100}]},{"name":"Wants","multiplier":-1.0,},{"name":"Income","multiplier":1.0,"items":[{"name":"Job","cost":300}]}])
 }
 let global_costs = {}
 
@@ -8,7 +8,10 @@ function build_budget_entry(item_name,display_name,item_cost,multiplier,category
     let edit_str = build_edit_str(item_name,item_cost,multiplier,category_name);
     let edit_name = '<input type = "text" class = "edit_name"value = "'+display_name+'">'
     console.log(edit_str)
-    return "<div class=\" row\">"+edit_name+"<input type = \"number\" oninput ="+edit_str+"onload = "+edit_str+" value=\""+item_cost+"\"/></div>"
+    let div = document.createElement("div");
+    div.className="row";
+   div.innerHTML = edit_name+"<input type = \"number\" oninput ="+edit_str+"onload = "+edit_str+" value=\""+item_cost+"\"/>";
+    return div
 }
 function build_edit_str(item_name,item_cost,multiplier,category_name){
     let edit_str =  '\'edit_price(this,\"'+
@@ -31,8 +34,8 @@ function setup_buttons(data){
             let edit_str = build_edit_str(data[i].items[j].name,data[i].items[j].cost,data[i].multiplier,data[i].name)
            
             console.log(edit_str)
-            let s = build_budget_entry(data[i].items[j].name,data[i].items[j].name,data[i].items[j].cost,data[i].multiplier,data[i].name)
-            items_div.innerHTML+=s
+            items_div.appendChild(build_budget_entry(data[i].items[j].name,data[i].items[j].name,data[i].items[j].cost,data[i].multiplier,data[i].name));
+           // items_div.innerHTML+=s
            
         }
         form.appendChild(items_div)
@@ -56,7 +59,7 @@ function setup_buttons(data){
 }
 function add_budget_item(div,multiplier,category_name){
     console.log("added")
-    document.getElementById(category_name).innerHTML+=build_budget_entry(String(Math.random()*1000000000),"Unnamed",0.0,multiplier,category_name)
+    document.getElementById(category_name).appendChild(build_budget_entry(String(Math.random()*1000000000),"Unnamed",0.0,multiplier,category_name))
     console.log(div)
 
 
