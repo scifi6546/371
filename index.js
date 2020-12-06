@@ -1,5 +1,5 @@
 function main(){
-    setup_buttons([{"name":"Needs","multiplier":-1.0,"items":[{"name":"rent","cost":100}]},{"name":"Wants","multiplier":1.0,},{"name":"Income","multiplier":1.0,"items":[{"name":"Job","cost":100}]}])
+    setup_buttons([{"name":"Needs","multiplier":-1.0,"items":[{"name":"rent","cost":100}]},{"name":"Wants","multiplier":1.0,},{"name":"Income","multiplier":1.0,"items":[{"name":"Job","cost":300}]}])
 }
 let global_costs = {}
 
@@ -41,9 +41,16 @@ function setup_buttons(data){
         
         
         top.appendChild(form)
+        
+        
     }
     let final_cost = '<div class="total_cost" id="total_cost">'+String(0)+'</div>'
        top.innerHTML+=final_cost
+       for(var i in data){
+        for(var j in data[i].items){
+            edit_price({"value":data[i].items[j].cost},data[i].items[j].name,0.0,data[i].multiplier,data[i].name)
+        }
+    }
 }
 function add_budget_item(div,multiplier,category_name){
     console.log("added")
