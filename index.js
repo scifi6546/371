@@ -6,9 +6,9 @@ let global_costs = {}
 window.onload = main;
 function build_budget_entry(item_name,display_name,item_cost,multiplier,category_name){
     let edit_str = build_edit_str(item_name,item_cost,multiplier,category_name);
-           
+    let edit_name = '<input type = "text" class = "edit_name"value = "'+display_name+'">'
     console.log(edit_str)
-    return "<div class=\" row\">"+display_name+"<input type = \"number\" oninput ="+edit_str+"onload = "+edit_str+" value=\""+item_cost+"\"/></div>"
+    return "<div class=\" row\">"+edit_name+"<input type = \"number\" oninput ="+edit_str+"onload = "+edit_str+" value=\""+item_cost+"\"/></div>"
 }
 function build_edit_str(item_name,item_cost,multiplier,category_name){
     let edit_str =  '\'edit_price(this,\"'+
@@ -46,9 +46,9 @@ function setup_buttons(data){
         
         
     }
-    let final_cost = '<div class="total_cost" id="total_cost">'+String(0)+'</div>'
-       top.innerHTML+=final_cost
-       for(var i in data){
+    let final_cost = '<div class = "total_cost_container"><div>Net Savings: </div><div class="total_cost" id="total_cost">'+String(0)+'</div></div>'
+    top.innerHTML+=final_cost
+    for(var i in data){
         for(var j in data[i].items){
             edit_price({"value":data[i].items[j].cost},data[i].items[j].name,0.0,data[i].multiplier,data[i].name)
         }
@@ -73,7 +73,7 @@ function edit_price(div,item_name,item_cost,multiplier,category_name) {
             total+=global_costs[i][j].cost*global_costs[i][j].multiplier
         }
     }
-    update_total_div(total)
+    update_total_div("$"+String(total))
    // global_costs[item.id] = item.value
 
     
