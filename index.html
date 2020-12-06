@@ -6,7 +6,30 @@
     <title> Super Budget Calculator </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initia;-scale=1">
+    
     <script>
+        var certian_costs_map = {}
+        function edit_price(item) {
+            console.log(item);
+            console.log(item.id);
+            certian_costs_map[item.id] = item.value
+            parent = item.parentNode.parentNode.parentNode.parentNode.parentNode;
+            let price = null;
+            for(var i=0;i<parent.length;i++){
+                if(parent[i].id =="totFixed"){
+                    price=parent[i]
+                }
+            }
+            console.log(price);
+            let total = 0;
+            for(var key in certian_costs_map){
+                if (certian_costs_map.hasOwnProperty(key)){
+                    total+=Number(certian_costs_map[key])
+                }
+            }
+            price.value = total;
+            
+        }
         //<!-- Change overall document background-->
         function colorChange(obj) {
             document.body.style.backgroundColor = obj.value;
@@ -23,6 +46,9 @@
         function incomeColorChange(obj) {
             document.getElementById("Income").style.backgroundColor = obj.value;
         }
+        function add_item(plus_object) {
+            
+        }
 
         // <! --auto lint needs to be installed(if using visual studio) also Mozilla.org good html documentation for help-- >
     </script>
@@ -38,7 +64,7 @@
     <div class="body">
         <div class="column">
             <!-- Form to input Certain Monthly Costs, updates on input and totals input -->
-            <form id="top" oninput="x.value=(parseFloat(mCell.value)+ parseFloat(mCar.value)+ parseFloat(mCInsurance.value)+ parseFloat(mRent.value)+ parseFloat(mGarbage.value) + parseFloat(mHInsurance.value)+ parseFloat(mHulu.value)+ parseFloat(mNetflix.value)+ parseFloat(mXBXLive.value)+ parseFloat(mPrime.value)+ parseFloat(mDisneyPlus.value)+ parseFloat(mcotherCost.value)).toFixed(2);">
+            <form id="top">
                 <table id="Fixed" class="budget_items">
                     <tr>
                         <th> Certain Costs </th>
@@ -52,14 +78,14 @@
                         <!-- Editable Label - Restricting paste & length to reduce formatting errors -->
                         <td><label onkeydown="return (this.innerText.length <= 16)" onpaste="return false;" contenteditable="true" for="mCell" class="lessFancyInput"> Cell Bill: </label></td>
                         <!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 -->
-                        <td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11" ; onpaste="return false;" type="number" class="fancyInput" name="mCell" step="0.01" onfocus="this.value=''"
+                        <td><input oninput="edit_price(this)" id = "cell_bill" maxLength="11" ; onpaste="return false;" type="number" class="fancyInput" name="mCell" step="0.01" onfocus="this.value=''"
                                 value="0.00" min="0.00" max="999999999.99" </td>
                     </tr>
                     <tr>
                         <!-- Editable Label - Restricting length to reduce formatting errors -->
                         <td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mCar" class="lessFancyInput"> Car Bill: </label></td>
                         <!-- Input limiting numerical input to "max Length" & restricting the use of paste, stepping in decimals for money tracking, autoclears on select with default 0.00 & min max set -->
-                        <td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11" ; onpaste="return false;" type="number" class="fancyInput" name="mCar" step="0.01" onfocus="this.value=''"
+                        <td><input oninput="edit_price(this)" id = "Car Bill" maxLength="11" ; onpaste="return false;" type="number" class="fancyInput" name="mCar" step="0.01" onfocus="this.value=''"
                                 value="0.00" min="0.00" max="999999999.99" </td>
 
                     </tr>
