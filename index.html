@@ -25,8 +25,30 @@
 		{
 			document.getElementById("Income").style.backgroundColor=obj.value;
 		}	
-		
+		function openBudget(evt, budgetName) {
+		  // Declare all variables
+		  var i, tabcontent, tablinks;
+
+		  // Get all elements with class="tabcontent" and hide them
+		  tabcontent = document.getElementsByClassName("tabcontent");
+		  for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		  }
+
+		  // Get all elements with class="tablinks" and remove the class "active"
+		  tablinks = document.getElementsByClassName("tablinks");
+		  for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		  }
+
+		  // Show the current tab, and add an "active" class to the button that opened the tab
+		  document.getElementById(budgetName).style.display = "block";
+		  evt.currentTarget.className += " active";
+		} 
 	</script>
+		<form style="position: fixed; right: 5px; top: 5px; padding:0 5px 0 0;">
+				<img src="https://st2.depositphotos.com/4297089/6430/v/600/depositphotos_64306629-stock-illustration-broken-piggy-bank-shot-by.jpg" alt="Uh Oh, We lost the image.">
+		</form>
 	<header id="intro" style="text-align: center;">
 	<h1>
 		Super Budget Calculator
@@ -35,23 +57,32 @@
 		Rename any cost or income item by simply clicking in the field and renaming it (Labels only!)<br>
 	</header>
 </head>
-  <body>
-	<div class="row 1">
-		<div class="column 1;">
-			<form id = "top" oninput="x.value=parseInt(mCell.value)+ parseInt(mCar.value)+ parseInt(mCInsurance.value)+ parseInt(mRent.value)+ parseInt(mGarbage.value) + parseInt(mHInsurance.value)+ parseInt(mHulu.value)+ parseInt(mNetflix.value)+ parseInt(mXBXLive.value)+ parseInt(mPrime.value)+ parseInt(mDisneyPlus.value);">
-				<table id = "Fixed" style="float: left; padding: 20px; background: white;">
+	<!-- Tab links -->
+	<body>
+		<div class="tab">
+			<button class="tablinks" onclick="openBudget(event, 'Needs')">Needs</button>
+			<button class="tablinks" onclick="openBudget(event, 'Wants')">Wants</button>
+			<button class="tablinks" onclick="openBudget(event, 'Income')">Income</button>
+			<button class="tablinks" onclick="openBudget(event, 'Auto Wizard')">Auto Wizard</button>
+			<button class="tablinks" onclick="openBudget(event, '70/20/10')">70/20/10</button>
+			<button class="tablinks" onclick="openBudget(event, 'DIY')" >DIY</button>
+		</div>
+	
+		<!-- Tab content -->
+		<div id="Needs" class="tabcontent">
+			<form id = "totalNeeds" oninput="x.value=(parseFloat(mCell.value)+ parseFloat(mCar.value)+ parseFloat(mCInsurance.value)+ parseFloat(mRent.value)+ parseFloat(mGarbage.value) + parseFloat(mHInsurance.value)+ parseFloat(mHulu.value)+ parseFloat(mNetflix.value)+ parseFloat(mXBXLive.value)+ parseFloat(mPrime.value)+ parseFloat(mDisneyPlus.value) + parseFloat(mCharity.value)).toFixed(2);">
+				<table id = "Needs" style="float: left; padding: 20px; background: white;">
 					<tr>
 						<th> Monthly </th>
 					</tr>
 					<tr>
-						<th>Certain Costs</th>
+						<th>Needs</th>
 						<th>Input</th>
 						
 					</tr>
 					<tr>
 						<td><label onkeydown="return (this.innerText.length <= 16)" onpaste="return false;" contenteditable="true" for="mCell" class="lessFancyInput"> Cell Bill: </label></td>
 						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mCell" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
-						<td><output 
 						
 					</tr>
 					<tr>
@@ -104,73 +135,51 @@
 						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mDisneyPlus" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
-					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
-						
-					</tr>
 						<td><br></td>
 					<tr>
-						<td><label for="x"> Total Certain = </label></td>
-						<td><output name="x" id="totFixed"></output></td>
+						<td><label for="x"> Total Needs = </label></td>
+						<td><output name="x" id="totNeed" for= "mCell mCar mCInsurance mRent mGarbage mHInsurance mHulu mNetflix mXBXLive mPrime mDisneyPlus"></output></td>
 					</tr>
-					<tr>
-						<td><table></td>
-						<td><th>Budget</th></td>
-							<td><tr></td>
-								<td><label for="wBudget"> Total Weekly Out: </label></td>
-								<td><output name="wBudget" </output></td>
-							<td></tr></td>
-							<td><tr></td>
-								<td><label for="wOUBudget"> Total Weekly Over/Under:  </label></td>
-								<td><output name="wOUBudget" ></output></td>
-							<td></tr></td>
-							<td><tr></td>
-								<td><label for="wSavings"> Savings:  </label></td>
-								<td><output name="wSavings" ></output></td>
-							<td></tr></td>	
-						<td></table></td>
-					</tr>
-				</table>
-			</form>
-			<form>
-				<table style="position: fixed; bottom: 30px; font-size:12px; background-color:Orange">
-					<tr>
-						<th>Form</th>
-						<th> - </th>
-						<th>Color</th>
-						<th> - </th>
-						<th>Select</th>
-						<th></th>
-					</tr>
-					<tr>
-						<td align="center"><label for="white"> White: </label></td>
-						<td align="center"><input type="radio" name="colors" value="white" onclick="fixedColorChange(this);"></td>
-						<td align="center"><label for="gray"> Gray: </label></td>
-						<td align="center"><input type="radio" name="colors" value="gray" onclick="fixedColorChange(this)"></td>
-						<td align="center"><label for="lime"> Lime: </label></td>
-						<td align="center"><input type="radio" name="colors" value="lime" onclick="fixedColorChange(this)"></td>
-					</tr>
-					<tr>	
-						<td align="center"><label for="red"> Red: </label></td>
-						<td align="center"><input type="radio" name="colors" value="#D21F3C" onclick="fixedColorChange(this)"></td>
-						<td align="center"><label for="blue"> Blue: </label></td>
-						<td align="center"><input type="radio" name="colors" value="#add8e6" onclick="fixedColorChange(this)"></td>
-						<td align="center"><label for="green"> Green: </label></td>
-						<td align="center"><input type="radio" name="colors" value="green" onclick="fixedColorChange(this)"></td>
-					</tr>
+					<form>
+						<table style="position: fixed; bottom: 10px; font-size:12px; background-color:Orange">
+							<tr>
+								<th>Form</th>
+								<th> - </th>
+								<th>Color</th>
+								<th> - </th>
+								<th>Select</th>
+								<th></th>
+							</tr>
+							<tr>
+								<td align="center"><label for="white"> White: </label></td>
+								<td align="center"><input type="radio" name="colors" value="white" onclick="fixedColorChange(this);"></td>
+								<td align="center"><label for="gray"> Gray: </label></td>
+								<td align="center"><input type="radio" name="colors" value="gray" onclick="fixedColorChange(this)"></td>
+								<td align="center"><label for="lime"> Lime: </label></td>
+								<td align="center"><input type="radio" name="colors" value="lime" onclick="fixedColorChange(this)"></td>
+							</tr>
+							<tr>	
+								<td align="center"><label for="red"> Red: </label></td>
+								<td align="center"><input type="radio" name="colors" value="#D21F3C" onclick="fixedColorChange(this)"></td>
+								<td align="center"><label for="blue"> Blue: </label></td>
+								<td align="center"><input type="radio" name="colors" value="#add8e6" onclick="fixedColorChange(this)"></td>
+								<td align="center"><label for="green"> Green: </label></td>
+								<td align="center"><input type="radio" name="colors" value="green" onclick="fixedColorChange(this)"></td>
+							</tr>
+						</table>
+					</form>
 				</table>
 			</form>
 		</div>
 
-		<div class="column 2;">
-			<form id="mid" oninput="y.value=parseInt(mElectric.value)+ parseInt(mWater.value) + parseInt(mInternet.value) + parseInt(mhFuel.value) + parseInt(mFood.value) + parseInt(mccBills.value)+ parseInt(mlBills.value)+ parseInt(moBills.value)+ parseInt(mtBills.value)+ parseInt(mlsBills.value)+ parseInt(mcmBills.value)">
-				<table id = "Variable" style="float: left; padding: 20px; background: white;">
+		<div id="Wants" class="tabcontent">
+			<form id="totalWants" oninput="y.value=(parseFloat(mElectric.value)+ parseFloat(mWater.value) + parseFloat(mInternet.value) + parseFloat(mhFuel.value) + parseFloat(mFood.value) + parseFloat(mccBills.value)+ parseFloat(mlBills.value)+ parseFloat(moBills.value)+ parseFloat(mtBills.value)+ parseFloat(mlsBills.value)+ parseFloat(mcmBills.value)).toFixed(2);">
+				<table id = "Wants" style="float: left; padding: 20px; background: white;">
 					<tr>
 						<th> Monthly </th>
 					</tr>
 					<tr>
-						<th>Uncertain Costs</th>
+						<th>Wants</th>
 						<th>Input</th>
 						
 					</tr>
@@ -229,67 +238,45 @@
 						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mcmBills" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
-					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
-						
-					</tr>
 					<td><br></td>
 					<tr>
-						<td><label for="y"> Total Uncertain = </label><br></td>
-						<td><output name="y" id="totVar" for="mElectric mWater mInternet mhFuel mFood mccBills mlBills moBills mtBills mlsBills mcmBills"></output></td>
+						<td><label for="y"> Total Wants = </label><br></td>
+						<td><output name="y" id="totWants" for="mElectric mWater mInternet mhFuel mFood mccBills mlBills moBills mtBills mlsBills mcmBills"></output></td>
 					</tr>
-					<tr>
-						<td><table></td>
-						<td><th>Budget</th></td>
-							<td><tr></td>
-								<td><label for="wBudget"> Total Weekly Out: </label></td>
-								<td><output name="wBudget" </output></td>
-							<td></tr></td>
-							<td><tr></td>
-								<td><label for="wOUBudget"> Total Weekly Over/Under:  </label></td>
-								<td><output name="wOUBudget" ></output></td>
-							<td></tr></td>
-							<td><tr></td>
-								<td><label for="wSavings"> Savings:  </label></td>
-								<td><output name="wSavings" ></output></td>
-							<td></tr></td>	
-						<td></table></td>
-					</tr>
+					<form>
+						<table style="position: fixed; bottom: 10px; font-size:12px; background-color:Orange">
+							<tr>
+								<th>Form</th>
+								<th> - </th>
+								<th>Color</th>
+								<th> - </th>
+								<th>Select</th>
+								<th></th>
+							</tr>
+							<tr>
+								<td align="center"><label for="white"> White: </label></td>
+								<td align="center"><input type="radio" name="colors" value="white" onclick="varColorChange(this)"></td>
+								<td align="center"><label for="gray"> Gray: </label></td>
+								<td align="center"><input type="radio" name="colors" value="gray" onclick="varColorChange(this)"></td>
+								<td align="center"><label for="lime"> Lime: </label></td>
+								<td align="center"><input type="radio" name="colors" value="lime" onclick="varColorChange(this)"></td>
+							</tr>
+							<tr>	
+								<td align="center"><label for="red"> Red: </label></td>
+								<td align="center"><input type="radio" name="colors" value="#D21F3C" onclick="varColorChange(this)"></td>
+								<td align="center"><label for="blue"> Blue: </label></td>
+								<td align="center"><input type="radio" name="colors" value="#add8e6" onclick="varColorChange(this)"></td>
+								<td align="center"><label for="green"> Green: </label></td>
+								<td align="center"><input type="radio" name="colors" value="green" onclick="varColorChange(this)"></td>
+							</tr>
+						</table>
+					</form>
 				</table>	
-			</form>
-			<form>
-				<table style="position: fixed; bottom: 30px; font-size:12px; background-color:Orange">
-					<tr>
-						<th>Form</th>
-						<th> - </th>
-						<th>Color</th>
-						<th> - </th>
-						<th>Select</th>
-						<th></th>
-					</tr>
-					<tr>
-						<td align="center"><label for="white"> White: </label></td>
-						<td align="center"><input type="radio" name="colors" value="white" onclick="varColorChange(this)"></td>
-						<td align="center"><label for="gray"> Gray: </label></td>
-						<td align="center"><input type="radio" name="colors" value="gray" onclick="varColorChange(this)"></td>
-						<td align="center"><label for="lime"> Lime: </label></td>
-						<td align="center"><input type="radio" name="colors" value="lime" onclick="varColorChange(this)"></td>
-					</tr>
-					<tr>	
-						<td align="center"><label for="red"> Red: </label></td>
-						<td align="center"><input type="radio" name="colors" value="#D21F3C" onclick="varColorChange(this)"></td>
-						<td align="center"><label for="blue"> Blue: </label></td>
-						<td align="center"><input type="radio" name="colors" value="#add8e6" onclick="varColorChange(this)"></td>
-						<td align="center"><label for="green"> Green: </label></td>
-						<td align="center"><input type="radio" name="colors" value="green" onclick="varColorChange(this)"></td>
-					</tr>
-				</table>
 			</form>
 		</div>
 
-		<div class="column 3;">
-			<form oninput="x.value=parseInt(mPay.value)+ parseInt(mTutor.value) + parseInt(mDisability.value) + parseInt(mlWinnings.value) + parseInt(mInheritance.value) + parseInt(mOther.value)">
+		<div id="Income" class="tabcontent">
+			<form id = "totalIncome" oninput="z.value=(parseFloat(mPay.value) + parseFloat(mTutor.value) + parseFloat(mDisability.value) + parseFloat(mlWinnings.value) + parseFloat(mInheritance.value) + parseFloat(mOtherOne.value)).toFixed(2)" >
 				<table id = "Income" style="float: left; top: 0; padding: 20px; background: white;">
 					<tr>
 						<th> Monthly </th>
@@ -325,117 +312,77 @@
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOtherOne" class="lessFancyInput"> Other Pay: </label></td>
 						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther1" class="lessFancyInput"> Other1 Pay: </label></td>
 						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther2" class="lessFancyInput"> Other2 Pay: </label></td>
 						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther3" class="lessFancyInput"> Other3 Pay: </label></td>
 						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther4" class="lessFancyInput"> Other4 Pay: </label></td>
 						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther5" class="lessFancyInput"> Other5 Pay: </label></td>
 						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther" class="lessFancyInput"> Other Pay: </label></td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther6" class="lessFancyInput"> Other6 Pay: </label></td>
 						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
 					<td><br></td>
 					<tr>
-						<td><label for="x"> Total Income = </label><br></td>
-						<td><output name="x" id="totIncome" for="mPay mTutor mDisability mlWinnings mInheritance mOther"></output><br></td>
+						<td><label for="z"> Total Income = </label><br></td>
+						<td><output name="z" id="totIncome" for="mPay mTutor mDisability mlWinnings mInheritance mOtherOne"></output><br></td>
 					</tr>
-					<tr>
-						<td><table></td>
-						<td><th>Budget</th></td>
-							<td><tr></td>
-								<td><label for="wBudget"> Total Weekly Out: </label></td>
-								<td><output name="wBudget" </output></td>
-							<td></tr></td>
-							<td><tr></td>
-								<td><label for="wOUBudget"> Total Weekly Over/Under:  </label></td>
-								<td><output name="wOUBudget" ></output></td>
-							<td></tr></td>
-							<td><tr></td>
-								<td><label for="wSavings"> Total Savings:  </label></td>
-								<td><output name="wSavings" ></output></td>
-							<td></tr></td>	
-						<td></table></td>
-					</tr>
+					<form>
+						<table style=" position: fixed; bottom: 10px; font-size:12px; background-color:Orange">
+							<tr>
+								<th>Form</th>
+								<th> - </th>
+								<th>Color</th>
+								<th> - </th>
+								<th>Select</th>
+								<th></th>
+							</tr>
+							<tr>
+								<td align="center"><label for="white"> White: </label></td>
+								<td align="center"><input type="radio" name="colors" value="white" onclick="incomeColorChange(this)"></td>
+								<td align="center"><label for="gray"> Gray: </label></td>
+								<td align="center"><input type="radio" name="colors" value="gray" onclick="incomeColorChange(this)"></td>
+								<td align="center"><label for="lime"> Lime: </label></td>
+								<td align="center"><input type="radio" name="colors" value="lime" onclick="incomeColorChange(this)"></td>
+							</tr>
+							<tr>	
+								<td align="center"><label for="red"> Red: </label></td>
+								<td align="center"><input type="radio" name="colors" value="#D21F3C" onclick="incomeColorChange(this)"></td>
+								<td align="center"><label for="blue"> Blue: </label></td>
+								<td align="center"><input type="radio" name="colors" value="#add8e6" onclick="incomeColorChange(this)"></td>
+								<td align="center"><label for="green"> Green: </label></td>
+								<td align="center"><input type="radio" name="colors" value="green" onclick="incomeColorChange(this)"></td>
+							</tr>
+						</table>	
+					</form>
 				</table>
 			</form>
-			<form>
-				<table style=" position: fixed; bottom: 30px; font-size:12px; background-color:Orange">
-					<tr>
-						<th>Form</th>
-						<th> - </th>
-						<th>Color</th>
-						<th> - </th>
-						<th>Select</th>
-						<th></th>
-					</tr>
-					<tr>
-						<td align="center"><label for="white"> White: </label></td>
-						<td align="center"><input type="radio" name="colors" value="white" onclick="incomeColorChange(this)"></td>
-						<td align="center"><label for="gray"> Gray: </label></td>
-						<td align="center"><input type="radio" name="colors" value="gray" onclick="incomeColorChange(this)"></td>
-						<td align="center"><label for="lime"> Lime: </label></td>
-						<td align="center"><input type="radio" name="colors" value="lime" onclick="incomeColorChange(this)"></td>
-					</tr>
-					<tr>	
-						<td align="center"><label for="red"> Red: </label></td>
-						<td align="center"><input type="radio" name="colors" value="#D21F3C" onclick="incomeColorChange(this)"></td>
-						<td align="center"><label for="blue"> Blue: </label></td>
-						<td align="center"><input type="radio" name="colors" value="#add8e6" onclick="incomeColorChange(this)"></td>
-						<td align="center"><label for="green"> Green: </label></td>
-						<td align="center"><input type="radio" name="colors" value="green" onclick="incomeColorChange(this)"></td>
-					</tr>
-				</table>	
-			</form>
 		</div>
-	</div>
-
-		<form>
-			<table style="position: fixed; right: 5px; top: 5px; width: 50px; padding:0 5px 0 0; background: #4682B4;">
-				<tr>
-					<th></th>
-					<th style="font-size: 150%; color:white;">Budget</th>	 
-					<th style="font-size: 150%; color:white;">Selection</th>	 
-					<th></th>	 							
-				</tr>
-				<tr>
-					<td> <label style="font-size: 110%; color:white;" for="autoWiz">Auto Wizard</label></td>
-					<td> <input type="radio" id="choice1" name="optimizer" value = "autoWiz" onclick="optimizeAuto(this)"></td>
-					<td> <label style="font-size: 110%; color:white;" for="autoWiz" for="70/20/10">70/20/10</label></td>
-					<td> <input type="radio" id="choice2" name="optimizer" value = "70/20/10" onclick="optimize702010(this)"></td>
-				</tr>
-				<tr>
-					<td> <label style="font-size: 110%; color:white;" for="autoWiz" for="DIY">DIY</label></td>
-					<td> <input type="radio" id="choice3" name="optimizer" value = "DIY" onclick="optimizeDIY(this)"></td>
-				 	<td> <label style="font-size: 110%; color:white;" for="autoWiz" for="other">Other</label></td>
-					<td> <input type="radio" id="choice4" name="optimizer" value = "other" onclick="optimizeOther(this)"></td>
-				</tr>
-			</table>
-		</form>
+	
 		<form>
 			<table style="position: fixed; left: 10px; top: 10px; width: auto; padding:0 5px 0 0; font-size:12px; background-color:Orange">
 				<tr>
@@ -464,9 +411,5 @@
 				</tr>
 			</table>
 		</form>
-	</body>
-	<footer position: absolute; bottom: 10 px;>
-		
-	</footer>
-
+	
 </html>
