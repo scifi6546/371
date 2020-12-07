@@ -1,11 +1,36 @@
 ﻿<!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="Budgeter.css">
+
 <head>
 	<title> Super Budget Calculator </title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initia;-scale=1">
 	<script>
+		function AutoWiz()
+		{		
+			document.getElementById("AutoNeeds").value = document.getElementById("totIncome").value * .5;
+			document.getElementById("AutoWants").value = document.getElementById("totIncome").value * .3;
+			document.getElementById("AutoSavings").value = document.getElementById("totIncome").value * .2;
+		}
+		function seventyTwentyTen()
+		{		
+			document.getElementById("sTTNeeds").value = document.getElementById("totIncome").value * .7;
+			document.getElementById("sTTWants").value = document.getElementById("totIncome").value * .2;
+			document.getElementById("sTTSavings").value = document.getElementById("totIncome").value - (document.getElementById("totNeed").value + document.getElementById("totWants").value);
+		}
+		function _NDIY()
+		{		
+			document.getElementById("DIYNeeds").value = document.getElementById("PercentNeeds").value;
+		}
+		function _WDIY()
+		{		
+			document.getElementById("DIYWants").value = document.getElementById("PercentWants").value;
+		}
+		function _SDIY()
+		{		
+			document.getElementById("DIYSavings").value = document.getElementById("PercentIncome").value;
+		}
 		function colorChange(obj)
 		{
 			document.body.style.backgroundColor=obj.value;
@@ -13,31 +38,33 @@
 
 		function fixedColorChange(obj)
 		{
-			document.getElementById("Fixed").style.backgroundColor=obj.value;
+			document.getElementById("Needs").style.background=obj.value;
 		}
 
 		function varColorChange(obj)
 		{
-			document.getElementById("Variable").style.backgroundColor=obj.value;
+			document.getElementById("Wants").style.backgroundColor=obj.value;
 		}
-
 		function incomeColorChange(obj)
 		{
 			document.getElementById("Income").style.backgroundColor=obj.value;
 		}	
-		function openBudget(evt, budgetName) {
+		function openBudget(evt, budgetName)
+		{
 		  // Declare all variables
 		  var i, tabcontent, tablinks;
 
 		  // Get all elements with class="tabcontent" and hide them
 		  tabcontent = document.getElementsByClassName("tabcontent");
-		  for (i = 0; i < tabcontent.length; i++) {
+		  for (i = 0; i < tabcontent.length; i++)
+		  {
 			tabcontent[i].style.display = "none";
 		  }
 
 		  // Get all elements with class="tablinks" and remove the class "active"
 		  tablinks = document.getElementsByClassName("tablinks");
-		  for (i = 0; i < tablinks.length; i++) {
+		  for (i = 0; i < tablinks.length; i++)
+		  {
 			tablinks[i].className = tablinks[i].className.replace(" active", "");
 		  }
 
@@ -60,17 +87,17 @@
 	<!-- Tab links -->
 	<body>
 		<div class="tab">
-			<button class="tablinks" onclick="openBudget(event, 'Needs')">Needs</button>
-			<button class="tablinks" onclick="openBudget(event, 'Wants')">Wants</button>
-			<button class="tablinks" onclick="openBudget(event, 'Income')">Income</button>
-			<button class="tablinks" onclick="openBudget(event, 'Auto Wizard')">Auto Wizard</button>
-			<button class="tablinks" onclick="openBudget(event, '70/20/10')">70/20/10</button>
-			<button class="tablinks" onclick="openBudget(event, 'DIY')" >DIY</button>
+			<button class="tablinks" onclick="openBudget(event, 'Need')">Needs</button>
+			<button class="tablinks" onclick="openBudget(event, 'Want')">Wants</button>
+			<button class="tablinks" onclick="openBudget(event, 'Incomes')">Income</button>
+			<button class="tablinks" onclick="openBudget(event, 'Auto Wizard')" onfocus="AutoWiz()">Auto Wizard</button>
+			<button class="tablinks" onclick="openBudget(event, 'seventyTwentyTen')" onfocus="seventyTwentyTen()">70/20/10</button>
+			<button class="tablinks" onclick="openBudget(event, 'DIY')">DIY</button>
 		</div>
 	
 		<!-- Tab content -->
-		<div id="Needs" class="tabcontent">
-			<form id = "totalNeeds" oninput="x.value=(parseFloat(mCell.value)+ parseFloat(mCar.value)+ parseFloat(mCInsurance.value)+ parseFloat(mRent.value)+ parseFloat(mGarbage.value) + parseFloat(mHInsurance.value)+ parseFloat(mHulu.value)+ parseFloat(mNetflix.value)+ parseFloat(mXBXLive.value)+ parseFloat(mPrime.value)+ parseFloat(mDisneyPlus.value) + parseFloat(mCharity.value)).toFixed(2);">
+		<div id="Need" class="tabcontent">
+			<form id = "totalNeeds" oninput="x.value=(parseFloat(mCell.value)+ parseFloat(mCar.value)+ parseFloat(mCInsurance.value)+ parseFloat(mRent.value)+ parseFloat(mGarbage.value) + parseFloat(mHInsurance.value)+ parseFloat(mHulu.value)+ parseFloat(mNetflix.value)+ parseFloat(mXBXLive.value)+ parseFloat(mPrime.value)+ parseFloat(mDisneyPlus.value)).toFixed(2);">
 				<table id = "Needs" style="float: left; padding: 20px; background: white;">
 					<tr>
 						<th> Monthly </th>
@@ -140,8 +167,10 @@
 						<td><label for="x"> Total Needs = </label></td>
 						<td><output name="x" id="totNeed" for= "mCell mCar mCInsurance mRent mGarbage mHInsurance mHulu mNetflix mXBXLive mPrime mDisneyPlus"></output></td>
 					</tr>
-					<form>
-						<table style="position: fixed; bottom: 10px; font-size:12px; background-color:Orange">
+				</table>
+			</form>
+			<form>
+						<table style="position: fixed; bottom: 10px; right: 10px; font-size:10px; background-color:Orange">
 							<tr>
 								<th>Form</th>
 								<th> - </th>
@@ -168,11 +197,9 @@
 							</tr>
 						</table>
 					</form>
-				</table>
-			</form>
 		</div>
 
-		<div id="Wants" class="tabcontent">
+		<div id="Want" class="tabcontent">
 			<form id="totalWants" oninput="y.value=(parseFloat(mElectric.value)+ parseFloat(mWater.value) + parseFloat(mInternet.value) + parseFloat(mhFuel.value) + parseFloat(mFood.value) + parseFloat(mccBills.value)+ parseFloat(mlBills.value)+ parseFloat(moBills.value)+ parseFloat(mtBills.value)+ parseFloat(mlsBills.value)+ parseFloat(mcmBills.value)).toFixed(2);">
 				<table id = "Wants" style="float: left; padding: 20px; background: white;">
 					<tr>
@@ -244,7 +271,7 @@
 						<td><output name="y" id="totWants" for="mElectric mWater mInternet mhFuel mFood mccBills mlBills moBills mtBills mlsBills mcmBills"></output></td>
 					</tr>
 					<form>
-						<table style="position: fixed; bottom: 10px; font-size:12px; background-color:Orange">
+						<table style="position: fixed; bottom: 10px; right: 10px; font-size:10px; background-color:Orange">
 							<tr>
 								<th>Form</th>
 								<th> - </th>
@@ -275,8 +302,8 @@
 			</form>
 		</div>
 
-		<div id="Income" class="tabcontent">
-			<form id = "totalIncome" oninput="z.value=(parseFloat(mPay.value) + parseFloat(mTutor.value) + parseFloat(mDisability.value) + parseFloat(mlWinnings.value) + parseFloat(mInheritance.value) + parseFloat(mOtherOne.value)).toFixed(2)" >
+		<div id="Incomes" class="tabcontent">
+			<form id = "totalIncome" oninput="z.value=(parseFloat(mPay.value) + parseFloat(mTutor.value) + parseFloat(mDisability.value) + parseFloat(mlWinnings.value) + parseFloat(mInheritance.value)  + parseFloat(mTips.value) + parseFloat(Other1.value) + parseFloat(Other2.value) + parseFloat(mOther3.value) + parseFloat(Other4.value) + parseFloat(Other5.value)).toFixed(2)" >
 				<table id = "Income" style="float: left; top: 0; padding: 20px; background: white;">
 					<tr>
 						<th> Monthly </th>
@@ -287,17 +314,17 @@
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mPay" class="lessFancyInput"> Job Pay: </label></td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mPay" class="lessFancyInput"> Job 1: </label></td>
 						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mPay" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mTutor" class="lessFancyInput"> Tutoring Pay: </label></td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mTutor" class="lessFancyInput"> Tutoring: </label></td>
 						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mTutor" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mDisability" class="lessFancyInput"> Disability Pay: </label></td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mDisability" class="lessFancyInput"> Disability: </label></td>
 						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mDisability" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
@@ -307,52 +334,47 @@
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mInheritance" class="lessFancyInput"> Inheritance Pay: </label></td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mInheritance" class="lessFancyInput"> Inheritance: </label></td>
 						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mInheritance" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOtherOne" class="lessFancyInput"> Other Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mTips" class="lessFancyInput"> Tips: </label></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mTips" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther1" class="lessFancyInput"> Other1 Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="Other1" class="lessFancyInput"> Other1: </label></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="Other1" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther2" class="lessFancyInput"> Other2 Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="Other2" class="lessFancyInput"> Other2 Pay: </label></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="Other2" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther3" class="lessFancyInput"> Other3 Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther3" class="lessFancyInput"> mOther3 Pay: </label></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther3" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther4" class="lessFancyInput"> Other4 Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="Other4" class="lessFancyInput"> Other4 Pay: </label></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="Other4" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
 					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther5" class="lessFancyInput"> Other5 Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
-						
-					</tr>
-					<tr>
-						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="mOther6" class="lessFancyInput"> Other6 Pay: </label></td>
-						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="mOther" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
+						<td><label onkeydown="return(this.innerText.length <= 16)" contenteditable="true" for="Other5" class="lessFancyInput"> Other5 Pay: </label></td>
+						<td><input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxLength="11"; onpaste="return false;" type="number" class="fancyInput" name="Other5" step="0.01" onfocus="this.value=''" value="0.00" min="0.00" max="999999999"</td>
 						
 					</tr>
 					<td><br></td>
 					<tr>
 						<td><label for="z"> Total Income = </label><br></td>
-						<td><output name="z" id="totIncome" for="mPay mTutor mDisability mlWinnings mInheritance mOtherOne"></output><br></td>
+						<td><output name="z" id="totIncome" for="mPay mTutor mDisability mlWinnings mInheritance mTips Other1 Other2 mOther3 Other4 Other5"></output><br></td>
 					</tr>
 					<form>
-						<table style=" position: fixed; bottom: 10px; font-size:12px; background-color:Orange">
+						<table style="position: fixed; bottom: 10px; right: 10px; font-size:10px; background-color:Orange">
 							<tr>
 								<th>Form</th>
 								<th> - </th>
@@ -382,15 +404,68 @@
 				</table>
 			</form>
 		</div>
-	
+		<div style="font-size: 50px" id="Auto Wizard" onfocus="AutoWiz()" class="tabcontent">
+			<table>
+				<tr>
+					<td><label for="AutoN"> Needs = $</label><br></td>
+					<td><output name="AutoN" id="AutoNeeds" for=""></output><br></td>
+				</tr>
+				<tr>
+					<td><label for="AutoW"> Wants = $</label><br></td>
+					<td><output name="AutoW" id="AutoWants" for=""></output><br></td>
+				</tr>
+				<tr>
+					<td><label for="AutoS"> Savings = $</label><br></td>
+					<td><output name="AutoS" id="AutoSavings" for=""></output><br></td>
+				</tr>
+			</table>
+		</div>
+		<div style="font-size: 50px" id="seventyTwentyTen" onfocus="seventyTwentyTen()" class="tabcontent">
+			<table>
+				<tr>
+					<td><label for="sTTN"> Needs = $</label><br></td>
+					<td><output name="sTTN" id="sTTNeeds" for=""></output><br></td>
+				</tr>
+				<tr>
+					<td><label for="sTTW"> Wants = $</label><br></td>
+					<td><output name="sTTW" id="sTTWants" for=""></output><br></td>
+				</tr>
+				<tr>
+					<td><label for="sTTS"> Savings = $</label><br></td>
+					<td><output name="sTTS" id="sTTSavings" for=""></output><br></td>
+				</tr>
+			</table>
+		</div>
+		<div style="font-size: 35px" id="DIY" class="tabcontent">
+			<table>
+				<tr>
+					<td><label for="DIYN"> Needs = $</label><br></td>
+					<td><output name="DIYN" id="DIYNeeds" for=""></output><br></td>
+					<td><label for="percentN"> Percent </label><br></td>
+					<td><input oninput="_NDIY()" maxLength="4" size="10" onpaste="return false;" type="number" min="0.01" max="1.00" step="0.01" value="0.70" onfocus="this.value=''" name="percentN" id="PercentNeeds" for=""></output><br></td>
+				</tr>
+				<tr>
+					<td><label for="DIYW"> Wants = $</label><br></td>
+					<td><output name="DIYW" id="DIYWants" for=""></output><br></td>
+					<td><label for="percentW"> Percent </label><br></td>
+					<td><input oninput="_WDIY()" maxLength="4" size="10" onpaste="return false;" type="number" min="0.01" max="1.00" step="0.01" value="0.70" onfocus="this.value=''" name="percentW" id="PercentWants" for=""></output><br></td>
+				</tr>
+				<tr>
+					<td><label for="DIYS"> Savings = $</label><br></td>
+					<td><output name="DIYS" id="DIYSavings" for=""></output><br></td>
+					<td><label for="percentS"> Percent </label><br></td>
+					<td><input oninput="_SDIY()" maxLength="4" size="10" onpaste="return false;" type="number" min="0.01" max="1.00" step="0.01" value="0.70" onfocus="this.value=''" name="percentS" id="PercentIncome" for=""></output><br></td>
+				</tr>
+			</table>
+		</div>
 		<form>
 			<table style="position: fixed; left: 10px; top: 10px; width: auto; padding:0 5px 0 0; font-size:12px; background-color:Orange">
 				<tr>
-					<th>Page</th>
+					<th style="color:white; font-size: 30;">PAGE</th>
 					<th> - </th>
-					<th>Color</th>
+					<th style="color:white; font-size: 30;">COLOR</th>
 					<th> - </th>
-					<th>Select</th>
+					<th style="color:white; font-size: 30;">SELECT</th>
 					<th></th>
 				</tr>
 				<tr>
