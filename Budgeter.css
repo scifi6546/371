@@ -106,7 +106,7 @@ input[type=number] {
 }
 
 img {
-  display: block;
+  display: inline-block;
   max-width:250px;
   max-height:100px;
   width: auto;
