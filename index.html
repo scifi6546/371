@@ -73,15 +73,44 @@
 		  evt.currentTarget.className += " active";
 		} 
 	</script>
-		<form style="position: fixed; right: 5px; top: 5px; padding:0 5px 0 0;">
-				<img src="https://st2.depositphotos.com/4297089/6430/v/600/depositphotos_64306629-stock-illustration-broken-piggy-bank-shot-by.jpg" alt="Uh Oh, We lost the image.">
-		</form>
+	
 	<header id="intro" style="text-align: center;">
+	<form>
+			<table style="float: left; width: auto; font-size:10px; background-color:Orange">
+				<tr>
+					<th style="color:white; font-size: 30;">PAGE</th>
+					<th> - </th>
+					<th style="color:white; font-size: 30;">COLOR</th>
+					<th> - </th>
+					<th style="color:white; font-size: 30;">SELECT</th>
+					<th></th>
+				</tr>
+				<tr>
+					<td align="center"><label for="white"> White: </label></td>
+					<td align="center"><input type="radio" name="colors" value="white" onclick="colorChange(this)"></td>
+					<td align="center"><label for="gray"> Gray: </label></td>
+					<td align="center"><input type="radio" name="colors" value="gray" onclick="colorChange(this)"></td>
+					<td align="center"><label for="lime"> Lime: </label></td>
+					<td align="center"><input type="radio" name="colors" value="lime" onclick="colorChange(this)"></td>
+				</tr>
+				<tr>	
+					<td align="center"><label for="red"> Red: </label></td>
+					<td align="center"><input type="radio" name="colors" value="#D21F3C" onclick="colorChange(this)"></td>
+					<td align="center"><label for="blue"> Blue: </label></td>
+					<td align="center"><input type="radio" name="colors" value="#add8e6" onclick="colorChange(this)"></td>
+					<td align="center"><label for="green"> Green: </label></td>
+					<td align="center"><input type="radio" name="colors" value="green" onclick="colorChange(this)"></td>
+				</tr>
+			</table>
+		</form>
 	<h1>
 		Super Budget Calculator
 	</h1>
 		Fill out the table with values to fit your situation. <br>
 		Rename any cost or income item by simply clicking in the field and renaming it (Labels only!)<br>
+	<form style="float: right; right: 5px; top: 5px; padding:0 5px 0 0;">
+				<img src="https://st2.depositphotos.com/4297089/6430/v/600/depositphotos_64306629-stock-illustration-broken-piggy-bank-shot-by.jpg" alt="Uh Oh, We lost the image.">
+		</form>
 	</header>
 </head>
 	<!-- Tab links -->
@@ -458,33 +487,6 @@
 				</tr>
 			</table>
 		</div>
-		<form>
-			<table style="position: fixed; left: 10px; top: 10px; width: auto; padding:0 5px 0 0; font-size:12px; background-color:Orange">
-				<tr>
-					<th style="color:white; font-size: 30;">PAGE</th>
-					<th> - </th>
-					<th style="color:white; font-size: 30;">COLOR</th>
-					<th> - </th>
-					<th style="color:white; font-size: 30;">SELECT</th>
-					<th></th>
-				</tr>
-				<tr>
-					<td align="center"><label for="white"> White: </label></td>
-					<td align="center"><input type="radio" name="colors" value="white" onclick="colorChange(this)"></td>
-					<td align="center"><label for="gray"> Gray: </label></td>
-					<td align="center"><input type="radio" name="colors" value="gray" onclick="colorChange(this)"></td>
-					<td align="center"><label for="lime"> Lime: </label></td>
-					<td align="center"><input type="radio" name="colors" value="lime" onclick="colorChange(this)"></td>
-				</tr>
-				<tr>	
-					<td align="center"><label for="red"> Red: </label></td>
-					<td align="center"><input type="radio" name="colors" value="#D21F3C" onclick="colorChange(this)"></td>
-					<td align="center"><label for="blue"> Blue: </label></td>
-					<td align="center"><input type="radio" name="colors" value="#add8e6" onclick="colorChange(this)"></td>
-					<td align="center"><label for="green"> Green: </label></td>
-					<td align="center"><input type="radio" name="colors" value="green" onclick="colorChange(this)"></td>
-				</tr>
-			</table>
-		</form>
+		
 	
 </html>
